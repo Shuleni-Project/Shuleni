@@ -13,6 +13,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env: 
+      NETLIFY_SITE_ID: 4248df9d-23a6-435b-97ef-71d3b40d6b85
 
     steps:
       - name: Checkout repository
@@ -33,4 +35,4 @@ jobs:
           production-command: echo "Netlify deploy complete!"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.K1PlkvUuV-BvECJSDwm3fEenbiydz6UPiiBKv8QfJ_A }} # Personal Netlify authentication token
-          NETLIFY_SITE_ID: ${{ secrets.4248df9d-23a6-435b-97ef-71d3b40d6b85 }} #The ID of the site you want to deploy to.
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} #The ID of the site you want to deploy to.
