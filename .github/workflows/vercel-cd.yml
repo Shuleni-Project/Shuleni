@@ -1,0 +1,37 @@
+# name: Deploy React App to Vercel
+
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches: 
+#       - main
+#       - development
+#   pull_request:
+#     branches: 
+#       - main
+#       - development
+
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Install dependencies
+#         working-directory: ./client
+#         run: npm install
+
+#       - name: Build production-ready code
+#         working-directory: ./client
+#         run: npm run build
+
+#       - name: Deploy to Vercel
+#         uses: amondnet/vercel-action@v20.10.0
+#         with:
+#           token: ${{ secrets.V8whUAtdqODzlt6ozGUQ157J }}
+#           args: '--prod'
+
+#         env: 
+#           VERCEL_PROJECT_ROOT: './client'

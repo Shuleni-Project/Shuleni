@@ -1,0 +1,38 @@
+name: Deploy React App to Netlify
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - development
+  
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env: 
+      NETLIFY_SITE_ID: 4248df9d-23a6-435b-97ef-71d3b40d6b85
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        working-directory: ./client
+        run: npm install
+
+      - name: Build production-ready code
+        working-directory: ./client
+        run: npm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: ./client/build
+          production-command: echo "Netlify deploy complete!"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.K1PlkvUuV-BvECJSDwm3fEenbiydz6UPiiBKv8QfJ_A }} # Personal Netlify authentication token
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} #The ID of the site you want to deploy to.
