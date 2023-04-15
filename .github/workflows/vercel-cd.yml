@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
-          token: ${{ secrets.V8whUAtdqODzlt6ozGUQ157J }}
+          vercel-token: ${{ secrets.V8whUAtdqODzlt6ozGUQ157J }}
           args: '--prod'
 
         env: 
