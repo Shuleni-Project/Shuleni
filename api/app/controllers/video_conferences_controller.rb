@@ -1,0 +1,2 @@
+class VideoConferencesController < ApplicationController
+end
