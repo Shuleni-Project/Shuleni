@@ -7,7 +7,7 @@ function Home() {
       <div>
         <video autoPlay muted loop className="w-full h-full">
           <source
-            src="https://database-six.vercel.app/video/2.mp4"
+            src="https://database-six.vercel.app/video/2  .mp4"
             type="video/mp4"
           />
         </video>
