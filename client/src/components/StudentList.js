@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
     // Make API call to get list of students and their attendance data
-    fetch('/students')
+    axios.get('/students')
       .then(response => {
         setStudents(response.data);
       })
