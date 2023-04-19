@@ -4,13 +4,13 @@ import FillLogin from "../assets/FillLogin";
 function Login() {
 
     /**declaring state */
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
 
 
-    const handleUsernameChange = (e) => {
+    const handleEmailChange = (e) => {
         console.log(e.target.value);
-        setUsername(e.target.value)
+        setEmail(e.target.value)
     }
     const handlePasswordChange = (e) => {
         console.log(e.target.value)
@@ -25,7 +25,7 @@ function Login() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({username: username, password: password}),
+            body: JSON.stringify({email: email, password: password}),
         })
             .then((response) => response.json())
             .then((data) => console.log(data));
@@ -33,9 +33,9 @@ function Login() {
     return (
         <div className="flex justify-around items-center mt-8">
             <form className="flex flex-col justify-center items-center min-w-max max-w-lg">
-                <label htmlFor="username" className="block flex-1">
-                    <span className="text-gray-700">Username</span>
-                    <input id="username" type="text" name="username" className="block m-2 mb-4 rounded-md p-2 w-full border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Username: " onChange={handleUsernameChange}></input>
+                <label htmlFor="email" className="block flex-1">
+                    <span className="text-gray-700">Email</span>
+                    <input id="email" type="text" name="email" className="block m-2 mb-4 rounded-md p-2 w-full border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Email: " onChange={handleEmailChange}></input>
                 </label>
 
                 <label htmlFor="password" className="block flex-1">
