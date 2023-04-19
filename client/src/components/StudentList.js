@@ -11,6 +11,18 @@ function StudentList() {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleDelete = (id) => {
+    fetch(`/api/students/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setStudents(students.filter((student) => student.id !== id));
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <h1>Student List</h1>
@@ -31,6 +43,7 @@ function StudentList() {
               <td>{student.class}</td>
               <td>
                 <Link to={`/students/${student.id}`}>View</Link>
+                <button onClick={() => handleDelete(student.id)}>Delete</button>
               </td>
             </tr>
           ))}
