@@ -21,13 +21,14 @@ require 'faker'
     User.create(
       username: Faker::Internet.username,
       email: Faker::Internet.email,
-      password: Faker::Internet.password,
+      password: "password",
       role: User.roles.keys.sample,
       course: Faker::Educator.course_name,
       gender: Faker::Gender.binary_type,
       school_id: School.all.sample.id
     )
   end
+
   
   # Seed data for units
   30.times do
