@@ -5,7 +5,7 @@ import About from './components/About';
 import Admin from './components/Admin';
 import Contact from './components/Contact';
 import Educator from './components/Educator';
-import Portfolio from './components/Portfolio';
+import Portfolio from './views/Portfolio';
 import Student from './components/Student';
 import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
