@@ -15,6 +15,13 @@ gem 'bcrypt'
 
 gem 'faker'
 
+gem 'actionmailer', '~> 7.0', '>= 7.0.4.3'
+
+gem 'cancancan'
+
+gem 'rack-cors'
+
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
