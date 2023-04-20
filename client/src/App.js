@@ -7,8 +7,8 @@ import Contact from './components/Contact';
 import Educator from './components/Educator';
 import Portfolio from './views/Portfolio';
 import Student from './components/Student';
-import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
       <Route exact path='/contact' element= {<Contact />} />
       <Route exact path='/educator' element= {<Educator />} />
       <Route exact path='/portfolio' element= {<Portfolio />} />
-      <Route exact path='/landing' element= {<LandingPage />} />
       <Route exact path='/student' element= {<Student />} />
+      <Route exact path='/login' element={<Login />}/>
     </Routes> 
     </div>
   );
