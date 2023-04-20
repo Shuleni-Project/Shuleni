@@ -6,7 +6,7 @@ import Admin from './components/Admin';
 import Contact from './components/Contact';
 import Educator from './components/Educator';
 import Portfolio from './views/Portfolio';
-import Student from './components/Student';
+import Student from './views/Student';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 
