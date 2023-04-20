@@ -4878,3 +4878,29 @@ FOREIGN KEY ("resource_id")
   [1m[36mUnit Load (0.2ms)[0m  [1m[34mSELECT "units".* FROM "units" WHERE "units"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
   [1m[36mVideoConference Create (0.4ms)[0m  [1m[32mINSERT INTO "video_conferences" ("user_id", "unit_id", "meeting_url", "meeting_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 43], ["unit_id", 17], ["meeting_url", "http://johnson.test/hobert_lind"], ["meeting_name", "commodi"], ["created_at", "2023-04-18 06:07:00.574525"], ["updated_at", "2023-04-18 06:07:00.574525"]]
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/ws" for ::1 at 2023-04-20 10:20:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-20 10:21:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-20 10:21:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-20 10:21:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-20 10:23:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-20 10:25:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
