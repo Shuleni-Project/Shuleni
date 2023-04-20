@@ -1,7 +1,9 @@
 import { useState } from "react";
 import FillLogin from "../assets/FillLogin";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
 
     /**declaring state */
     const [email, setEmail] = useState('');
@@ -18,17 +20,21 @@ function Login() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // creates the post when the data is added it adds the data to the backend ie ..db.json
-        fetch("https://jsonplaceholder.typicode.com/posts", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({email: email, password: password}),
-        })
-            .then((response) => response.json())
-            .then((data) => console.log(data));
+        if (email === '' || password === '')
+            alert('field cannot be empty');
+        else {
+            // creates the post when the data is added it adds the data to the backend ie ..db.json
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email: email, password: password }),
+            })
+                .then((response) => response.json())
+                .then((data) => console.log(data));
+            navigate('/student')
+        }
     }
     return (
         <div className="flex justify-around items-center mt-8">

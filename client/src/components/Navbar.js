@@ -10,10 +10,6 @@ function Navbar() {
             <NavLink to='/about' className="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">About</NavLink>
             <NavLink to='/portfolio' className="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Portfolio</NavLink>
             <NavLink to='/contact' className="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Contact</NavLink>
-            {/*<a href="/" class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Home</a>*/}
-            {/* <a href="/about" class="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">About</a> */}
-            {/* <a href="/portfolio" class="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Portfolio</a>
-            <a href="/contact" class="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Contact</a> */}
         </nav>
     </div>
   )
