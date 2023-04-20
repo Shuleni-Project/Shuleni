@@ -9,6 +9,7 @@ import Portfolio from './components/Portfolio';
 import Student from './components/Student';
 import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
+import VideoConference from './components/VideoConference';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route exact path='/portfolio' element= {<Portfolio />} />
       <Route exact path='/landing' element= {<LandingPage />} />
       <Route exact path='/student' element= {<Student />} />
+      <Route exact path='/videoconference' element= {<VideoConference />} />
     </Routes> 
     </div>
   );
