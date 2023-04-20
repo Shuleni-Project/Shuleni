@@ -7,7 +7,7 @@ function Student() {
     <div>
       <SideNavbar />
       <div id="content" className="min-h-fit w-screen min-w-fit">
-        <div className="ml-24 pt-4">
+        <div className="ml-24 pt-2">
           <h2 className="font-mono text-2xl antialiased font-bold text-sky-900">My Courses</h2>
           <EnrolledCourses />
         </div>
