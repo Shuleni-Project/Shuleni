@@ -1,4 +1,4 @@
-
+import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
 import About from './components/About';
@@ -8,7 +8,8 @@ import Educator from './components/Educator';
 import Portfolio from './views/Portfolio';
 import Student from './views/Student';
 import Navbar from './components/Navbar';
-import Login from './components/Login';
+import ChatRoom from './components/ChatRoom';
+import Chats from './components/Chats';
 
 function App() {
   return (
@@ -22,7 +23,12 @@ function App() {
       <Route exact path='/educator' element= {<Educator />} />
       <Route exact path='/portfolio' element= {<Portfolio />} />
       <Route exact path='/student' element= {<Student />} />
-      <Route exact path='/login' element={<Login />}/>
+      <Route exact path='/chats' element= {<Chats />} />
+      <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 
+      {/* TODO: When the student-user is viewing their units, have a button to join chat for each unit. 
+      The button navigates student-user to /chats/:unitId */}
+
+      {/* <button click={()=>{nav(`/chats/${unit.id}`)}}> ...  */}
     </Routes> 
     </div>
   );
