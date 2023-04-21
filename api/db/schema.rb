@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_182457) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_213126) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_182457) do
     t.datetime "updated_at", null: false
     t.index ["resource_id"], name: "index_libraries_on_resource_id"
     t.index ["user_id"], name: "index_libraries_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "unit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unit_id"], name: "index_messages_on_unit_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "resources", force: :cascade do |t|
@@ -110,6 +120,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_182457) do
   add_foreign_key "exams", "users"
   add_foreign_key "libraries", "resources"
   add_foreign_key "libraries", "users"
+  add_foreign_key "messages", "units"
+  add_foreign_key "messages", "users"
   add_foreign_key "resources", "units"
   add_foreign_key "units", "schools"
   add_foreign_key "units", "users"

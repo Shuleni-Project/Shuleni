@@ -31,11 +31,11 @@ require 'faker'
 
   
   # Seed data for units
-  30.times do
+  100.times do
     Unit.create(
       name: Faker::Educator.course_name,
       school_id: School.all.sample.id,
-      user_id: User.all.sample.id
+      user_id: rand(0..50)
     )
   end
   
