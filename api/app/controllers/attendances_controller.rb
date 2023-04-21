@@ -3,11 +3,12 @@ class AttendancesController < ApplicationController
     load_and_authorize_resource 
     def index
         attendances = Attendance.all
-        # if user.role == "student"
+        if current_user.role == "student"
+            attendances = current_user.attendances
+        end
         # else
         # if can? :read, attendances
             render json: attendances
-        # end
     end
 
     def show

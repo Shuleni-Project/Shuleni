@@ -1,6 +1,9 @@
 class UnitsController < ApplicationController
     def index
         unit = Unit.all
+        if current_user.role == "student"
+            unit = current_user.units
+        end
         render json: unit
     end
     def show

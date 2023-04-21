@@ -5,6 +5,9 @@ class SchoolsController < ApplicationController
     # GET /schools
     def index
       @schools = School.all
+      if current_user.role == "student"
+        @schools = current_user.school
+      end
       render json: @schools
     end
     # GET /schools/1

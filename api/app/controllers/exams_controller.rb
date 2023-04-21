@@ -1,6 +1,9 @@
 class ExamsController < ApplicationController
     def index
         exam = Exam.all
+        if current_user.role == "student"
+            exam = current_user.exams
+        end
         render json: exam
     end
     def show
