@@ -17,13 +17,14 @@ class Ability
       can :manage, VideoConference, user_id: user.id
       can :manage, Attendance
     elsif user.role == "student"
+      puts user
       can :read, Attendance, user_id: user.id
-      can :read, Unit
-      can :read, Exam
-      can :read, Library
-      can :read, Resource
+      can :read, Unit, user_id: user.id
+      can :read, Exam, user_id: user.id
+      can :read, Library, user_id: user.id
+      can :read, Resource, user_id: user.id
       # can :read, Resource
-      can :read, VideoConference
+      can :read, VideoConference, user_id: user.id
       # can :read, Attendance
     end
   end
