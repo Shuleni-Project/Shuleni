@@ -49,6 +49,8 @@ function Home() {
           </video>
         </div>
       </div>
+      </div>
   );
-}
-export default Home;
+
+  }
+export default Home
