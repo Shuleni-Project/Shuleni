@@ -14,6 +14,7 @@ function Student() {
       data: studentScores.map(data => data.score)
     }]
   });
+
   const [attendance, setAttendance] = useState({
     labels: ['Present', 'Absent'],
     datasets: [{
@@ -21,6 +22,7 @@ function Student() {
       data: [75, 25]
     }]
   });
+
   return (
     <div>
       <SideNavbar />
@@ -35,9 +37,9 @@ function Student() {
             <div className='max-w-sm flex-auto'>
               <StudentAttendance chartData={attendance} />
             </div>
-          </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
