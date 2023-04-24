@@ -5,11 +5,11 @@ import About from './components/About';
 import Admin from './components/Admin';
 import Contact from './components/Contact';
 import Educator from './components/Educator';
-import Portfolio from './components/Portfolio';
-import Student from './components/Student';
-import LandingPage from './components/LandingPage';
+import Portfolio from './views/Portfolio';
+import Student from './views/Student';
 import Navbar from './components/Navbar';
 import VideoConference from './components/VideoConference';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
       <Route exact path='/contact' element= {<Contact />} />
       <Route exact path='/educator' element= {<Educator />} />
       <Route exact path='/portfolio' element= {<Portfolio />} />
-      <Route exact path='/landing' element= {<LandingPage />} />
       <Route exact path='/student' element= {<Student />} />
+      <Route exact path='/login' element= {<Login />} />
       <Route exact path='/videoconference' element= {<VideoConference />} />
     </Routes> 
     </div>
