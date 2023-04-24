@@ -22,6 +22,23 @@ function Student() {
       data: [75, 25]
     }]
   });
+  
+  useEffect(() => {
+    setScore({
+      labels: studentScores.map(data => data.course),
+      datasets: [{
+        label: `student's score`,
+        data: studentScores.map(data => data.score)
+      }]
+    });
+    setAttendance({
+      labels: ['Present', 'Absent'],
+      datasets: [{
+        label: "Student's attendance",
+        data: [75, 25]
+      }]
+    })
+  }, []);
 
   return (
     <div>
