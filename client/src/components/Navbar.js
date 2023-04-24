@@ -19,7 +19,7 @@ function Navbar() {
             <NavLink to='/about' className="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">About</NavLink>
             <NavLink to='/portfolio' className="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Portfolio</NavLink>
             <NavLink to='/contact' className="font-medium px-3 py-2 mx-4 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">Contact</NavLink>
-            <NavLink to '/videoconference' class="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">videoconference</NavLink>
+            <NavLink to='/videoconference' className="font-medium px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">videoconference</NavLink>
 
         </nav>
     </div>
