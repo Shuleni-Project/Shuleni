@@ -1,20 +1,9 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const VideoConference = () => {
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
   const peerConnectionRef = useRef(null);
-
-  const handleRemoteStream = useCallback(event => {
-    // Attach remote stream to remote video element
-    remoteVideoRef.current.srcObject = event.streams[0];
-  }, []);
-
-  const sendSignalingData = data => {
-    // Send signaling data to server for signaling
-    // You can implement your own signaling server or use a third-party service for signaling
-    console.log('Signaling data:', data);
-  };
 
   useEffect(() => {
     const handleIceCandidate = event => {
@@ -22,6 +11,17 @@ const VideoConference = () => {
         // Send ICE candidate to server for signaling
         sendSignalingData(event.candidate);
       }
+    };
+
+    const handleRemoteStream = event => {
+      // Attach remote stream to remote video element
+      remoteVideoRef.current.srcObject = event.streams[0];
+    };
+
+    const sendSignalingData = data => {
+      // Send signaling data to server for signaling
+      // You can implement your own signaling server or use a third-party service for signaling
+      console.log('Signaling data:', data);
     };
 
     const setupLocalVideo = async () => {
@@ -56,7 +56,7 @@ const VideoConference = () => {
     };
 
     setupLocalVideo();
-  }, [handleRemoteStream, sendSignalingData]);
+  }, []);
 
   return (
     <div>
