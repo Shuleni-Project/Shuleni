@@ -73,6 +73,13 @@ require 'faker'
       user_id: User.all.sample.id
     )
   end
+
+  50.times do
+    Course.create(
+      lesson: Faker::Educator.course_name,
+      name: Faker::Educator.subject
+    )
+  end
   
   # Seed data for libraries
   200.times do
