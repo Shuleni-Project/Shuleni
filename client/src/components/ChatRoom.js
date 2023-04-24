@@ -3,40 +3,43 @@ import { useParams } from 'react-router-dom';
 import ActionCable from 'actioncable';
 
 
+const webSocketUrl = `ws://localhost:3000/cable`;
+const webSocket = new WebSocket(webSocketUrl);
+
+let changes = 0;
 
 
-
-const ChatRoom = () => {
+const ChatRoom = ({userId = 5}) => {
   const { unitId } = useParams();
-  const webSocketUrl = `ws://localhost:3000/cable`;
-
-  const webSocket = new WebSocket(webSocketUrl);
   const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState('');
   const [text, setText] = useState('');
   const [channel, setChannel] = useState({unsubscribe:()=>{}});
-  
-  
-  
-  useEffect(() => {
 
+  useEffect(()=>{
     webSocket.onopen = function(event) {
       // subscribe to chat room channel
       const payload = {
         command: 'subscribe',
         identifier: JSON.stringify({ channel: 'ChatRoomChannel', unit_id: unitId })
       };
-    
+      
       webSocket.send(JSON.stringify(payload));
+      // console.log(JSON.parse(event.data))
     };
-
+    
     webSocket.addEventListener('message', function (event) {
-      event = (JSON.parse(event.data))
-      console.log(event.type)
-        if(typeof event.message === "object"){
-          console.log('WebSocket message received:', event.message);
-          event.message && setMessages([...messages, event.message?.message?.body])
-        }
+      event = JSON.parse(event.data)
+      console.log(event)
+      console.log(event.message?.messages)
+      if(event.message?.message){
+        setMessage(event.message.message)
+        changes++;
+      }else if(event.message?.messages){
+        setMessage(event.message.messages)
+      }
     });
+    
     webSocket.onerror = function(error) {
       console.error('WebSocket error:', error);
     };
@@ -44,18 +47,20 @@ const ChatRoom = () => {
     webSocket.onclose = function(event) {
       console.log('WebSocket closed:', event);
     };
-
-    // return () => {
-    //   webSocket.close();;
-    // };
-  }, [messages]);
+  },[])
+  
+  useEffect(()=>{
+    console.log(changes)
+    console.log('\npushing message')
+    setMessages([...messages, message])
+  },[changes])
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const payload = {
       command: 'message',
       identifier: JSON.stringify({ channel: 'ChatRoomChannel', unit_id: unitId }),
-      data: JSON.stringify({ body: "text" })
+      data: JSON.stringify({ content: text, user_id: userId, unit_id: unitId })
     };
     
     webSocket.send(JSON.stringify(payload));
@@ -64,8 +69,8 @@ const ChatRoom = () => {
 
   return (
     <div>
-      {messages.map((message, index) => (
-        <div key={index}>{message}</div>
+      {messages.map((message) => (
+        <div key={message.id}>{message.content}</div>
       ))}
       <form onSubmit={handleSubmit}>
         <input type="text" value={text} className="block m-2 mb-4 rounded-md p-2 w-full border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" onChange={(e) => setText(e.target.value)} />

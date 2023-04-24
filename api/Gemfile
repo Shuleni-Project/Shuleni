@@ -15,6 +15,12 @@ gem 'bcrypt'
 
 gem 'faker'
 
+gem 'rswag'
+
+gem 'rspec-rails'
+
+gem 'rswag-ui'
+
 gem 'actionmailer', '~> 7.0', '>= 7.0.4.3'
 
 gem 'cancancan'

@@ -5,7 +5,7 @@ class SchoolsController < ApplicationController
     # GET /schools
     def index
       @schools = School.all
-      if current_user.role == "student"
+      if current_user.role == "student" || current_user.role == "teacher"
         @schools = current_user.school
       end
       render json: @schools
