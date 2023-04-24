@@ -1,19 +1,29 @@
-// videoconference.js
-
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 
 const VideoConference = () => {
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
   const peerConnectionRef = useRef(null);
-   const handleIceCandidate = event => {
-    if (event.candidate) {
-      // Send ICE candidate to server for signaling
-      sendSignalingData(event.candidate);
-    }
+
+  const handleRemoteStream = useCallback(event => {
+    // Attach remote stream to remote video element
+    remoteVideoRef.current.srcObject = event.streams[0];
+  }, []);
+
+  const sendSignalingData = data => {
+    // Send signaling data to server for signaling
+    // You can implement your own signaling server or use a third-party service for signaling
+    console.log('Signaling data:', data);
   };
 
   useEffect(() => {
+    const handleIceCandidate = event => {
+      if (event.candidate) {
+        // Send ICE candidate to server for signaling
+        sendSignalingData(event.candidate);
+      }
+    };
+
     const setupLocalVideo = async () => {
       try {
         // Get user media for local video
@@ -46,27 +56,7 @@ const VideoConference = () => {
     };
 
     setupLocalVideo();
-  }, [handleIceCandidate]);
-
-/**
-  const handleIceCandidate = event => {
-    if (event.candidate) {
-      // Send ICE candidate to server for signaling
-      sendSignalingData(event.candidate);
-    }
-  };
-  */
-
-  const handleRemoteStream = event => {
-    // Attach remote stream to remote video element
-    remoteVideoRef.current.srcObject = event.streams[0];
-  };
-
-  const sendSignalingData = data => {
-    // Send signaling data to server for signaling
-    // You can implement your own signaling server or use a third-party service for signaling
-    console.log('Signaling data:', data);
-  };
+  }, [handleRemoteStream, sendSignalingData]);
 
   return (
     <div>
@@ -77,4 +67,3 @@ const VideoConference = () => {
 };
 
 export default VideoConference;
-
