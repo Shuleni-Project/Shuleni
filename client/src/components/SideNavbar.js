@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import VideoConference from "./VideoConference";
+
 
 import profilePic from '../assets/undraw_pic_profile.svg'
 import {
