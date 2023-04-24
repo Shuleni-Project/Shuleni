@@ -24,7 +24,7 @@ const SideNavbar = () => {
     return (
 
 
-        <div class="dark:bg-zinc-800">
+       
                        
 
 
@@ -137,8 +137,7 @@ const SideNavbar = () => {
             {/* <!-- Content --> */}
             
             {/* <!-- Content --> */}
-
-        </div>
+            </div>
     );
 }
 
