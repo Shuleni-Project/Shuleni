@@ -6,6 +6,12 @@ const VideoConference = () => {
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
   const peerConnectionRef = useRef(null);
+   const handleIceCandidate = event => {
+    if (event.candidate) {
+      // Send ICE candidate to server for signaling
+      sendSignalingData(event.candidate);
+    }
+  };
 
   useEffect(() => {
     const setupLocalVideo = async () => {
@@ -42,12 +48,14 @@ const VideoConference = () => {
     setupLocalVideo();
   }, [handleIceCandidate]);
 
+/**
   const handleIceCandidate = event => {
     if (event.candidate) {
       // Send ICE candidate to server for signaling
       sendSignalingData(event.candidate);
     }
   };
+  */
 
   const handleRemoteStream = event => {
     // Attach remote stream to remote video element
