@@ -26,7 +26,7 @@ function App() {
       <Route exact path='/educator' element= {<Educator />} />
       <Route exact path='/portfolio' element= {<Portfolio />} />
       <Route exact path='/student' element= {<Student />} />
-<<<<<<< HEAD
+
       <Route exact path='/chats' element= {<Chats />} />
       <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 
       {/* TODO: When the student-user is viewing their units, have a button to join chat for each unit. 
@@ -34,11 +34,11 @@ function App() {
 
       {/* <button click={()=>{nav(`/chats/${unit.id}`)}}> ...  */}
     </Routes> 
-=======
+
       <Route exact path='/login' element= {<Login />} />
       <Route exact path='/videoconference' element= {<VideoConference />} />
    </Routes> 
->>>>>>> 688d889ed25e402e9753ede5404938609bf4308b
+
     </div>
   );
 }
