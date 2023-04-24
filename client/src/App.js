@@ -8,6 +8,10 @@ import Educator from './components/Educator';
 import Portfolio from './views/Portfolio';
 import Student from './views/Student';
 import Navbar from './components/Navbar';
+
+import VideoConference from './components/VideoConference';
+
+
 import Login from './components/Login';
 
 function App() {
@@ -22,8 +26,9 @@ function App() {
       <Route exact path='/educator' element= {<Educator />} />
       <Route exact path='/portfolio' element= {<Portfolio />} />
       <Route exact path='/student' element= {<Student />} />
-      <Route exact path='/login' element={<Login />}/>
-    </Routes> 
+      <Route exact path='/login' element= {<Login />} />
+      <Route exact path='/videoconference' element= {<VideoConference />} />
+   </Routes> 
     </div>
   );
 }
