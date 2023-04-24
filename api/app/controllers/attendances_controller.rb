@@ -45,3 +45,5 @@ class AttendancesController < ApplicationController
         params.permit(:date, :present, :user_id)
     end
 end
+  
+end

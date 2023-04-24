@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   belongs_to :school
+  has_many :courses
   has_secure_password
   has_many :attendances
   has_many :exams
