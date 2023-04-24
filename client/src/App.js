@@ -8,7 +8,7 @@ import Educator from './components/Educator';
 import Portfolio from './views/Portfolio';
 import Student from './views/Student';
 import ChatRoom from './components/ChatRoom';
-import 'Chats from './components/Chats';
+import Chats from './components/Chats';
 import Navbar from './components/Navbar';
 
 import VideoConference from './components/VideoConference';
