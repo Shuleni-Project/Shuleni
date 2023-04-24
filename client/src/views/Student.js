@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SideNavbar from '../components/SideNavbar';
 import EnrolledCourses from '../components/EnrolledCourses';
 import Chart from '../components/Chart';
