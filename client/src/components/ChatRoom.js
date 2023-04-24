@@ -32,14 +32,15 @@ const ChatRoom = ({userId = 5}) => {
       event = JSON.parse(event.data)
       console.log(event)
       console.log(event.message?.messages)
+      event.message?.messages && setMessages(event.message.messages)
       if(event.message?.message){
         setMessage(event.message.message)
         changes++;
       }else if(event.message?.messages){
-        setMessage(event.message.messages)
+        changes++;
       }
     });
-    
+
     webSocket.onerror = function(error) {
       console.error('WebSocket error:', error);
     };
@@ -66,6 +67,7 @@ const ChatRoom = ({userId = 5}) => {
     webSocket.send(JSON.stringify(payload));
     setText('');
   };
+
 
   return (
     <div>

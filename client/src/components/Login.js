@@ -1,17 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import FillLogin from "../assests/FillLogin";
 function Login() {
     /**declaring state */
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const navigate = useNavigate();
+    
     const handleUsernameChange = (e) => {
         console.log(e.target.value);
         setEmail(e.target.value)
     }
+    
+    
     const handlePasswordChange = (e) => {
         console.log(e.target.value)
         setPassword(e.target.value)
     }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -24,7 +30,26 @@ function Login() {
             body: JSON.stringify({email: email, password: password}),
         })
             .then((response) => response.json())
-            .then((data) => console.log(data));
+            .then((data) =>{
+                console.log(data)
+
+                switch(data.role){
+                    case("admin"):
+                        navigate("/admin");
+                        break;
+
+                    case("student"):
+                        navigate("/student");
+                        break;
+                        
+                    case("teacher"):
+                        navigate("/educator");
+                        break;
+
+                    default:
+                        break;
+                }
+            });
     }
     return (
         <div className="flex justify-around items-center mt-8">

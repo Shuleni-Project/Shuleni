@@ -88,7 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
 
   create_table "units", force: :cascade do |t|
     t.string "name"
-    t.integer "course_id"
     t.bigint "school_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

@@ -18,9 +18,7 @@ class ChatRoomChannel < ApplicationCable::Channel
   
   def send_messages
     messages = Message.where(unit_id: params[:unit_id])
-    messages.each do |message|
-      ChatRoomChannel.broadcast_to(chat_room, { type: 'broadcast', message: message })
-    end
+      ChatRoomChannel.broadcast_to(chat_room, { type: 'broadcast', messages: messages })
   end
 
   def chat_room

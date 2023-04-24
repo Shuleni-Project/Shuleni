@@ -1,8 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    action_cable_client (3.1.0)
-      websocket-eventmachine-client (>= 1.2.0)
     actioncable (7.0.4.3)
       actionpack (= 7.0.4.3)
       activesupport (= 7.0.4.3)
@@ -88,7 +86,6 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
-    eventmachine (1.2.7)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
@@ -203,24 +200,15 @@ GEM
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    websocket (1.2.9)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
-    websocket-eventmachine-base (1.2.0)
-      eventmachine (~> 1.0)
-      websocket (~> 1.0)
-      websocket-native (~> 1.0)
-    websocket-eventmachine-client (1.3.0)
-      websocket-eventmachine-base (~> 1.0)
     websocket-extensions (0.1.5)
-    websocket-native (1.0.0)
     zeitwerk (2.6.7)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  action_cable_client (~> 3.1)
   actioncable
   actionmailer (~> 7.0, >= 7.0.4.3)
   active_model_serializers
