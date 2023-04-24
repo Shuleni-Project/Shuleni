@@ -23,7 +23,6 @@ const SideNavbar = () => {
     }, []);
     return (
 
-        <div className="dark:bg-zinc-800">
 
 
 
