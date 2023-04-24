@@ -40,7 +40,7 @@ const VideoConference = () => {
     };
 
     setupLocalVideo();
-  }, []);
+  }, [handleIceCandidate]);
 
   const handleIceCandidate = event => {
     if (event.candidate) {
