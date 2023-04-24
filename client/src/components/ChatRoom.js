@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ActionCable from 'actioncable';
 
 
 const webSocketUrl = `ws://localhost:3000/cable`;
