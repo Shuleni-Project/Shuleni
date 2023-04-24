@@ -13,7 +13,6 @@ const ChatRoom = ({userId = 5}) => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   const [text, setText] = useState('');
-  const [channel, setChannel] = useState({unsubscribe:()=>{}});
 
   useEffect(()=>{
     webSocket.onopen = function(event) {
@@ -47,12 +46,14 @@ const ChatRoom = ({userId = 5}) => {
     webSocket.onclose = function(event) {
       console.log('WebSocket closed:', event);
     };
+    // eslint-disable-next-line 
   },[])
   
   useEffect(()=>{
     console.log(changes)
     console.log('\npushing message')
     setMessages([...messages, message])
+    // eslint-disable-next-line 
   },[changes])
 
   const handleSubmit = (event) => {
