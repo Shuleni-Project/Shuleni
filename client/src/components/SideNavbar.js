@@ -115,8 +115,6 @@ const SideNavbar = () => {
 
                         <a href="/videoconference"
 
-                        <a href="/"
-
                             className="group flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-300 outline-none transition duration-300 ease-linear hover:bg-white/10 hover:outline-none focus:bg-white/10 focus:outline-none active:bg-white/10 active:outline-none data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none"
                             data-te-sidenav-link-ref>
                             <span
