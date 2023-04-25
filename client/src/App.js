@@ -10,6 +10,8 @@ import Student from './views/Student';
 import ChatRoom from './components/ChatRoom';
 import Chats from './components/Chats';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import { SidebarData } from './components/SidebarData';
 
 import VideoConference from './components/VideoConference';
 
@@ -29,6 +31,11 @@ function App() {
       <Route exact path='/educator' element= {<Educator />} />
       <Route exact path='/portfolio' element= {<Portfolio />} />
       <Route exact path='/student' element= {<Student />} />
+
+      <Route exact path='/Sidebar' element= {<Sidebar />} />
+      <Route exact path='/SidebarData' element= {<SidebarData />} />
+      <Route exact path='/login' element= {<Login />} />
+      <Route exact path='/videoconference' element= {<VideoConference />} />
 
       <Route exact path='/chats' element= {<Chats />} />
       <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 
