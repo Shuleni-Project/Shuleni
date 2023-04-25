@@ -44,6 +44,6 @@ class AttendancesController < ApplicationController
     def attendance_params
         params.permit(:date, :present, :user_id)
     end
-end
+
   
 end
