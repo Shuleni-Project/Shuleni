@@ -31,14 +31,10 @@ function App() {
 
       <Route exact path='/Sidebar' element= {<Sidebar />} />
       <Route exact path='/SidebarData' element= {<SidebarData />} />
-
-      
-
-    </Routes> 
-
       <Route exact path='/login' element= {<Login />} />
       <Route exact path='/videoconference' element= {<VideoConference />} />
-   </Routes> 
+
+     </Routes> 
 
     </div>
   );
