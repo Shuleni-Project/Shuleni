@@ -1,146 +1,146 @@
-require 'swagger_helper'
+# require 'swagger_helper'
 
-RSpec.describe 'courses', type: :request do
+# RSpec.describe 'courses', type: :request do
 
-  path '/courses' do
+#   path '/courses' do
 
-    get('list courses') do
-      response(200, 'successful') do
+#     get('list courses') do
+#       response(200, 'successful') do
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    post('create course') do
-      response(200, 'successful') do
-        consumes 'application/json'        
-        parameter name: :course, in: :body, schema: {          
-        type: :object,          
-        properties: {           
-          name: { type: :string },            
-          lesson: { type: :string }                  
-        },          
-        required: %w[name lesson ]  
-        }
+#     post('create course') do
+#       response(200, 'successful') do
+#         consumes 'application/json'        
+#         parameter name: :course, in: :body, schema: {          
+#         type: :object,          
+#         properties: {           
+#           name: { type: :string },            
+#           lesson: { type: :string }                  
+#         },          
+#         required: %w[name lesson ]  
+#         }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+#   end
 
-  path '/courses/new' do
+#   path '/courses/new' do
 
-    get('new course') do
-      response(200, 'successful') do
+#     get('new course') do
+#       response(200, 'successful') do
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+#   end
 
-  path '/courses/{id}/edit' do
-    # You'll want to customize the parameter types...
-    parameter name: 'id', in: :path, type: :string, description: 'id'
+#   path '/courses/{id}/edit' do
+#     # You'll want to customize the parameter types...
+#     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('edit course') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     get('edit course') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+#   end
 
-  path '/courses/{id}' do
-    # You'll want to customize the parameter types...
-    parameter name: 'id', in: :path, type: :string, description: 'id'
+#   path '/courses/{id}' do
+#     # You'll want to customize the parameter types...
+#     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-    get('show course') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     get('show course') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    patch('update course') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     patch('update course') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    put('update course') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     put('update course') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    delete('delete course') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     delete('delete course') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
-end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+#   end
+# end
