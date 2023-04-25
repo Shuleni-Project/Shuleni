@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="w-full relative">
       <div>
-        <video autoPlay muted loop className="w-full h-full">
+        <video autoPlay muted loop className="w-screen h-screen min-w-fit">
           <source
             src="https://database-six.vercel.app/video/2  .mp4"
             type="video/mp4"
@@ -28,7 +28,7 @@ function Home() {
             </div>
           </div>
           <div className="flex space-x-2 justify-center">
-            <Link to="/landing">
+            <Link to="/login">
               <button
                 type="button"
                 data-mdb-ripple="true"
@@ -49,7 +49,8 @@ function Home() {
           </video>
         </div>
       </div>
-    </div>
+      </div>
   );
-}
-export default Home;
+
+  }
+export default Home

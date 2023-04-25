@@ -1,27 +1,30 @@
 class UsersController < ApplicationController
+    load_and_authorize_resource 
+    def index
+        user = User.all
+        render json: user, status: :ok
 
-    def show
-        user = User.find_by(id: session[:user_id])
-        if user
-            render json: user
-        else
-            render json: { error: "Not authorized" }, status: :unauthorized
-        end
+        # get the users attendance from the attandance table
     end
-
+    def show
+        user = User.find_by(id: params[:id])
+        render json: user, status: :ok
+    end
     def create
         user = User.create(user_params)
-        if user.valid?
-            session[:user_id] = user.id
-            render json: user, status: :created
-        else
-            render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
-        end
+        render json: user, status: :created
     end
-
+    def update
+        user = User.find_by(id: params[:id])
+        user.update(user_params)
+        render json: user, status: :ok
+    end
+    def destroy
+        user = User.find_by(id: params[:id])
+        user.destroy
+    end
     private
-
     def user_params
-        params.permit(:username, :email, :password, :role, :course, :gender)
+        params.permit(:username, :email, :role, :course, :gender, :password)
     end
 end
