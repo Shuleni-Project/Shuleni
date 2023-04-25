@@ -1,11 +1,12 @@
 // videoconference.js
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const VideoConference = () => {
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
   const peerConnectionRef = useRef(null);
+  const [participantCount, setParticipantCount] = useState(1); // Initial participant count is 1 for local user
 
   useEffect(() => {
     const setupLocalVideo = async () => {
@@ -52,6 +53,9 @@ const VideoConference = () => {
   const handleRemoteStream = event => {
     // Attach remote stream to remote video element
     remoteVideoRef.current.srcObject = event.streams[0];
+
+    // Update participant count
+    setParticipantCount(prevCount => prevCount + 1);
   };
 
   const sendSignalingData = data => {
@@ -60,13 +64,33 @@ const VideoConference = () => {
     console.log('Signaling data:', data);
   };
 
+  const endCall = () => {
+    // Close peer connection and stop local video stream
+    peerConnectionRef.current.close();
+    localVideoRef.current.srcObject.getTracks().forEach(track => {
+      track.stop();
+    });
+  };
+
+  const toggleCamera = async () => {
+    // Toggle camera on/off
+    const stream = localVideoRef.current.srcObject;
+    stream.getVideoTracks().forEach(track => {
+      track.enabled = !track.enabled;
+    });
+  };
+
   return (
     <div>
       <video ref={localVideoRef} autoPlay muted playsInline />
       <video ref={remoteVideoRef} autoPlay playsInline />
+      <div>
+        <button onClick={endCall}>End Call</button>
+        <button onClick={toggleCamera}>Toggle Camera</button>
+        <p>Participants: {participantCount}</p>
+      </div>
     </div>
   );
 };
 
 export default VideoConference;
-
