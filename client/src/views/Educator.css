@@ -1,0 +1,232 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .pie-chart-progress-chart {
+    display: flex;
+  }
+  
+  .sidebar {
+    flex: 0 0 200px; /* set a fixed width for the sidebar */
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #2d9cdb;
+    padding: 20px;
+  }
+  
+  .sidebar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #d9d9d9;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar li a {
+    display: block;
+    padding: 10px;
+    background-color: #d9d9d9;
+    color: #1c1b1f;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar li.active a {
+    background-color: #1c1b1f;
+    color: #d9d9d9;
+  }
+  
+  .main {
+    margin-left: 2px;
+    padding: 2px;
+    width: calc(100% - 250px);
+    background-color: #d9d9d9;
+  }
+  
+  .class-overview {
+    background-color: #d9d9d9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+  }
+  
+  .class-overview h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1c1b1f;
+  }
+  
+  .progress-chart {
+    height: 200px;
+    background-color: #1c1b1f;
+  }
+  
+  .attendance-chart {
+    height: 200px;
+    background-color: #1c1b1f;
+  }
+  
+  .chat {
+    height: 300px;
+    background-color: #1c1b1f;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard {
+      flex-direction: column;
+    }
+
+    .container {
+      flex-direction: column; /* switch to a vertical layout */
+    }
+  
+    .sidebar {
+      flex: 0 0 auto; /* let the sidebar expand to its content */
+    }
+  
+    .main {
+      width: 100%;
+    }
+  
+    .sidebar {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Define the color variables */
+:root {
+  --primary-color: #1C1B1F;
+  --secondary-color: #D9D9D9;
+  --accent-color: #2D9CDB;
+}
+
+/* Style the container for the student list */
+.student-list {
+  background-color: var(--secondary-color);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+/* Style the header of the student list */
+.student-list h1 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* Style the table of the student list */
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Style the table headings of the student list */
+.student-list th {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style the table rows of the student list */
+.student-list tr {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+/* Style the table cells of the student list */
+.student-list td {
+  color: var(--primary-color);
+  font-size: 16px;
+  padding: 8px;
+}
+
+/* Style the alternate table rows of the student list */
+.student-list tr:nth-child(even) {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+/* Style the links within the student list */
+.student-list a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Style the hover effect of links within the student list */
+.student-list a:hover {
+  text-decoration: underline;
+}
+
+
+/* Define color variables */
+:root {
+  --dark: #1C1B1F;
+  --light: #D9D9D9;
+  --accent: #2D9CDB;
+}
+
+/* Style the StudentList component */
+.StudentList {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: var(--dark);
+  color: var(--light);
+  border-radius: 0.5rem;
+}
+
+/* Style the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--light);
+}
+
+th {
+  background-color: var(--accent);
+  color: var(--light);
+}
+
+/* Style the table rows */
+tr:nth-child(even) {
+  background-color: var(--light);
+}
+
+tr:hover {
+  background-color: #C4C4C4;
+}
+
+/* Style the table cell contents */
+td:first-child {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+  
