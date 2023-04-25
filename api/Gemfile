@@ -23,7 +23,7 @@ gem 'faker'
 
 gem 'actionmailer', '~> 7.0', '>= 7.0.4.3'
 
-gem 'cancancan'
+
 
 gem 'rack-cors'
 
