@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import VideoConference from "./VideoConference";
+
+
+
 import profilePic from '../assets/undraw_pic_profile.svg'
 import {
     Sidenav,
@@ -21,8 +23,14 @@ const SideNavbar = () => {
     }, []);
     return (
 
-        <div class="dark:bg-zinc-800">
+
+
+
+       
                        
+
+
+        <div class="dark:bg-zinc-800">
 
             {/* <!-- Sidenav --> */}
             <nav
@@ -106,7 +114,9 @@ const SideNavbar = () => {
                         </a>
                     </li>
                     <li className="relative my-4">
+
                         <a href="/videoconference"
+
                             className="group flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-300 outline-none transition duration-300 ease-linear hover:bg-white/10 hover:outline-none focus:bg-white/10 focus:outline-none active:bg-white/10 active:outline-none data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none"
                             data-te-sidenav-link-ref>
                             <span
@@ -129,8 +139,7 @@ const SideNavbar = () => {
             {/* <!-- Content --> */}
             
             {/* <!-- Content --> */}
-
-        </div>
+            </div>
     );
 }
 

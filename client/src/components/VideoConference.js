@@ -1,6 +1,4 @@
-// videoconference.js
-
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const VideoConference = () => {
   const localVideoRef = useRef(null);
@@ -9,6 +7,24 @@ const VideoConference = () => {
   const [participantCount, setParticipantCount] = useState(1); // Initial participant count is 1 for local user
 
   useEffect(() => {
+    const handleIceCandidate = event => {
+      if (event.candidate) {
+        // Send ICE candidate to server for signaling
+        sendSignalingData(event.candidate);
+      }
+    };
+
+    const handleRemoteStream = event => {
+      // Attach remote stream to remote video element
+      remoteVideoRef.current.srcObject = event.streams[0];
+    };
+
+    const sendSignalingData = data => {
+      // Send signaling data to server for signaling
+      // You can implement your own signaling server or use a third-party service for signaling
+      console.log('Signaling data:', data);
+    };
+
     const setupLocalVideo = async () => {
       try {
         // Get user media for local video
@@ -42,43 +58,6 @@ const VideoConference = () => {
 
     setupLocalVideo();
   }, []);
-
-  const handleIceCandidate = event => {
-    if (event.candidate) {
-      // Send ICE candidate to server for signaling
-      sendSignalingData(event.candidate);
-    }
-  };
-
-  const handleRemoteStream = event => {
-    // Attach remote stream to remote video element
-    remoteVideoRef.current.srcObject = event.streams[0];
-
-    // Update participant count
-    setParticipantCount(prevCount => prevCount + 1);
-  };
-
-  const sendSignalingData = data => {
-    // Send signaling data to server for signaling
-    // You can implement your own signaling server or use a third-party service for signaling
-    console.log('Signaling data:', data);
-  };
-
-  const endCall = () => {
-    // Close peer connection and stop local video stream
-    peerConnectionRef.current.close();
-    localVideoRef.current.srcObject.getTracks().forEach(track => {
-      track.stop();
-    });
-  };
-
-  const toggleCamera = async () => {
-    // Toggle camera on/off
-    const stream = localVideoRef.current.srcObject;
-    stream.getVideoTracks().forEach(track => {
-      track.enabled = !track.enabled;
-    });
-  };
 
   return (
     <div>
