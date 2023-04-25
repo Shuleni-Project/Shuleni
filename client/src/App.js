@@ -1,4 +1,4 @@
-
+import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
 import About from './components/About';
@@ -7,6 +7,8 @@ import Contact from './components/Contact';
 import Educator from './components/Educator';
 import Portfolio from './views/Portfolio';
 import Student from './views/Student';
+import ChatRoom from './components/ChatRoom';
+import Chats from './components/Chats';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import { SidebarData } from './components/SidebarData';
@@ -17,6 +19,7 @@ import VideoConference from './components/VideoConference';
 import Login from './components/Login';
 
 function App() {
+
   return (
     <div>
       <Navbar />
@@ -34,7 +37,17 @@ function App() {
       <Route exact path='/login' element= {<Login />} />
       <Route exact path='/videoconference' element= {<VideoConference />} />
 
-     </Routes> 
+      <Route exact path='/chats' element= {<Chats />} />
+      <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 
+      {/* TODO: When the student-user is viewing their units, have a button to join chat for each unit. 
+      The button navigates student-user to /chats/:unitId */}
+
+      {/* <button click={()=>{nav(`/chats/${unit.id}`)}}> ...  */}
+  
+
+      <Route exact path='/login' element= {<Login/>} />
+      <Route exact path='/videoconference' element= {<VideoConference />} />
+   </Routes> 
 
     </div>
   );
