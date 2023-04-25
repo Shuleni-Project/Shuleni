@@ -8,12 +8,12 @@ class ChatsController < ApplicationController
         render json: chats, status: :ok
     end
     def create
-        chats = Chat.create(chats_params)
+        chats = Chat.create(chat_params)
         render json: chats, status: :created
     end
     def update
         chats = Chat.find_by(id: params[:id])
-        chats.update(chats_params)
+        chats.update(chat_params)
         render json: chats, status: :ok
     end
     def destroy

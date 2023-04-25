@@ -1,12 +1,12 @@
 # require 'swagger_helper'
 
-# RSpec.describe 'resources', type: :request do
+# RSpec.describe 'user_courses', type: :request do
 
-#   path '/resources' do
+#   path '/user_courses' do
 
-#     get('list resources') do
+#     get('list user_courses') do
 #       response(200, 'successful') do
-        
+
 #         after do |example|
 #           example.metadata[:response][:content] = {
 #             'application/json' => {
@@ -17,18 +17,17 @@
 #         run_test!
 #       end
 #     end
-    
-#     post('create resource') do
+
+#     post('create user_course') do
 #       response(200, 'successful') do
 #         consumes 'application/json'        
-#         parameter name: :resource, in: :body, schema: {          
+#         parameter name: :user_course, in: :body, schema: {          
 #         type: :object,          
-#         properties: {          
-#           name: { type: :string },            
-#           file_url: { type: :string },  
-#           unit_id: { type: :bigint }        
+#         properties: {            
+#           user_id: { type: :bigint },            
+#           unit_id: { type: :bigint }                   
 #         },          
-#         required: %w[name file_url unit_id]  
+#         required: %w[user_id unit_id ]  
 #         }
 
 #         after do |example|
@@ -43,11 +42,11 @@
 #     end
 #   end
 
-#   path '/resources/{id}' do
+#   path '/user_courses/{id}' do
 #     # You'll want to customize the parameter types...
 #     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-#     get('show resource') do
+#     get('show user_course') do
 #       response(200, 'successful') do
 #         let(:id) { '123' }
 
@@ -62,7 +61,7 @@
 #       end
 #     end
 
-#     patch('update resource') do
+#     patch('update user_course') do
 #       response(200, 'successful') do
 #         let(:id) { '123' }
 
@@ -77,7 +76,7 @@
 #       end
 #     end
 
-#     put('update resource') do
+#     put('update user_course') do
 #       response(200, 'successful') do
 #         let(:id) { '123' }
 
@@ -92,7 +91,7 @@
 #       end
 #     end
 
-#     delete('delete resource') do
+#     delete('delete user_course') do
 #       response(200, 'successful') do
 #         let(:id) { '123' }
 

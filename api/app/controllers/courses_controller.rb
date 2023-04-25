@@ -4,7 +4,9 @@ class CoursesController < ApplicationController
   # GET /courses
   def index
     courses = Course.all
-
+    # if current_user.role == "student"
+    #   courses = current_user.courses
+    # end
     render json: courses
   end
 

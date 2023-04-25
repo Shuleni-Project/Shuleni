@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # mount Rswag::Ui::Engine => '/api-docs'
+  # mount Rswag::Api::Engine => '/api-docs'
   resources :user_courses
   resources :courses, only: [:index, :show, :create, :update, :destroy, :edit, :new]
   resources :units
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   resources :exams
   resources :resources
   resources :chats
+  resources :messages
   resources :users, only: [:index, :show, :create, :update, :destroy]
   post "/login", to: "sessions#create"
 

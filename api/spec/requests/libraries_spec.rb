@@ -1,100 +1,109 @@
-require 'swagger_helper'
+# require 'swagger_helper'
 
-RSpec.describe 'libraries', type: :request do
+# RSpec.describe 'libraries', type: :request do
 
-  path '/libraries' do
+#   path '/libraries' do
 
-    get('list libraries') do
-      response(200, 'successful') do
+#     get('list libraries') do
+#       response(200, 'successful') do
+        
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+    
+#     post('create library') do
+#       response(200, 'successful') do
+#         consumes 'application/json'        
+#         parameter name: :library, in: :body, schema: {          
+#         type: :object,          
+#         properties: {           
+#           user_id: { type: :bigint },            
+#           resource_id: { type: :bigint }          
+#         },          
+#         required: %w[user_id resource_id]  
+#         }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+#   end
 
-    post('create library') do
-      response(200, 'successful') do
+#   path '/libraries/{id}' do
+#     # You'll want to customize the parameter types...
+#     parameter name: 'id', in: :path, type: :string, description: 'id'
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
+#     get('show library') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-  path '/libraries/{id}' do
-    # You'll want to customize the parameter types...
-    parameter name: 'id', in: :path, type: :string, description: 'id'
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    get('show library') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     patch('update library') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    patch('update library') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     put('update library') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
 
-    put('update library') do
-      response(200, 'successful') do
-        let(:id) { '123' }
+#     delete('delete library') do
+#       response(200, 'successful') do
+#         let(:id) { '123' }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-
-    delete('delete library') do
-      response(200, 'successful') do
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-  end
-end
+#         after do |example|
+#           example.metadata[:response][:content] = {
+#             'application/json' => {
+#               example: JSON.parse(response.body, symbolize_names: true)
+#             }
+#           }
+#         end
+#         run_test!
+#       end
+#     end
+#   end
+# end
