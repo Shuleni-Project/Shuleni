@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
@@ -80,7 +80,7 @@ RSpec.describe "Users", type: :request do
   end
   
 end
-=======
+
 # require 'swagger_helper'
 
 # RSpec.describe 'users', type: :request do
@@ -165,4 +165,3 @@ end
 #     end
 #   end
 # end
->>>>>>> ce592490ae32f09b17b64ad28d36d39d1e564051
