@@ -59,6 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
     t.index ["user_id"], name: "index_libraries_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "unit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unit_id"], name: "index_messages_on_unit_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "resources", force: :cascade do |t|
     t.string "name"
     t.string "file_url"
@@ -78,7 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
 
   create_table "units", force: :cascade do |t|
     t.string "name"
-    t.integer "course_id"
     t.bigint "school_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -127,6 +136,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
   add_foreign_key "exams", "users"
   add_foreign_key "libraries", "resources"
   add_foreign_key "libraries", "users"
+  add_foreign_key "messages", "units"
+  add_foreign_key "messages", "users"
   add_foreign_key "resources", "units"
   add_foreign_key "units", "schools"
   add_foreign_key "units", "users"
