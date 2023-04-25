@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const VideoConference = () => {
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
   const peerConnectionRef = useRef(null);
+  const [participantCount, setParticipantCount] = useState(1); // Initial participant count is 1 for local user
 
   useEffect(() => {
     const handleIceCandidate = event => {
@@ -57,11 +58,19 @@ const VideoConference = () => {
 
     setupLocalVideo();
   }, []);
+  
+  const endCall = () => { setParticipantCount(0)}
+  const toggleCamera = () => {return 0;}
 
   return (
     <div>
       <video ref={localVideoRef} autoPlay muted playsInline />
       <video ref={remoteVideoRef} autoPlay playsInline />
+      <div>
+        <button onClick={endCall}>End Call</button>
+        <button onClick={toggleCamera}>Toggle Camera</button>
+        <p>Participants: {participantCount}</p>
+      </div>
     </div>
   );
 };
