@@ -59,7 +59,7 @@ const VideoConference = () => {
     setupLocalVideo();
   }, []);
   
-  const endCall = () => { return 0;}
+  const endCall = () => { setParticipantCount(0)}
   const toggleCamera = () => {return 0;}
 
   return (
