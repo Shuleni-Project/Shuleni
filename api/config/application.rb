@@ -20,6 +20,11 @@ Bundler.require(*Rails.groups)
 
 module Api
   class Application < Rails::Application
+
+    #Add cookies and session middlewware
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
