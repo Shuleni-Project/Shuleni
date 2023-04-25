@@ -60,7 +60,7 @@ group :test do
 end
 
 
-gem 'cancancan', '~> 3.5'
+# gem 'cancancan', '~> 3.5'
 
 gem 'factory_bot_rails', '~> 6.2'
 
