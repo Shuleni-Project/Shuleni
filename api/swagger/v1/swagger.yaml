@@ -1,397 +1,397 @@
----
-openapi: 3.0.1
-info:
-  title: API V1
-  version: v1
-paths:
-  "/attendances":
-    get:
-      summary: list attendances
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create attendance
-      responses:
-        '200':
-          description: successful
-  "/attendances/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show attendance
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update attendance
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update attendance
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete attendance
-      responses:
-        '200':
-          description: successful
-  "/user/attendance":
-    get:
-      summary: personal_attendance attendance
-      responses:
-        '200':
-          description: successful
-  "/chats":
-    get:
-      summary: list chats
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create chat
-      responses:
-        '200':
-          description: successful
-  "/chats/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show chat
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update chat
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update chat
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete chat
-      responses:
-        '200':
-          description: successful
-  "/exams":
-    get:
-      summary: list exams
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create exam
-      responses:
-        '200':
-          description: successful
-  "/exams/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show exam
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update exam
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update exam
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete exam
-      responses:
-        '200':
-          description: successful
-  "/libraries":
-    get:
-      summary: list libraries
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create library
-      responses:
-        '200':
-          description: successful
-  "/libraries/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show library
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update library
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update library
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete library
-      responses:
-        '200':
-          description: successful
-  "/messages":
-    get:
-      summary: list messages
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create message
-      responses:
-        '200':
-          description: successful
-  "/messages/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show message
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update message
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update message
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete message
-      responses:
-        '200':
-          description: successful
-  "/resources":
-    get:
-      summary: list resources
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create resource
-      responses:
-        '200':
-          description: successful
-  "/resources/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show resource
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update resource
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update resource
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete resource
-      responses:
-        '200':
-          description: successful
-  "/schools":
-    get:
-      summary: list schools
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create school
-      responses:
-        '200':
-          description: successful
-  "/schools/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show school
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update school
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update school
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete school
-      responses:
-        '200':
-          description: successful
-  "/units":
-    get:
-      summary: list units
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create unit
-      responses:
-        '200':
-          description: successful
-  "/units/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show unit
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update unit
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update unit
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete unit
-      responses:
-        '200':
-          description: successful
-  "/users":
-    get:
-      summary: list users
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create user
-      responses:
-        '200':
-          description: successful
-  "/users/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show user
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete user
-      responses:
-        '200':
-          description: successful
-  "/video_conferences":
-    get:
-      summary: list video_conferences
-      responses:
-        '200':
-          description: successful
-    post:
-      summary: create video_conference
-      responses:
-        '200':
-          description: successful
-  "/video_conferences/{id}":
-    parameters:
-    - name: id
-      in: path
-      description: id
-      required: true
-      schema:
-        type: string
-    get:
-      summary: show video_conference
-      responses:
-        '200':
-          description: successful
-    patch:
-      summary: update video_conference
-      responses:
-        '200':
-          description: successful
-    put:
-      summary: update video_conference
-      responses:
-        '200':
-          description: successful
-    delete:
-      summary: delete video_conference
-      responses:
-        '200':
-          description: successful
-servers:
-- url: https://{defaultHost}
-  variables:
-    defaultHost:
-      default: www.example.com
+# ---
+# openapi: 3.0.1
+# info:
+#   title: API V1
+#   version: v1
+# paths:
+#   "/attendances":
+#     get:
+#       summary: list attendances
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create attendance
+#       responses:
+#         '200':
+#           description: successful
+#   "/attendances/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show attendance
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update attendance
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update attendance
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete attendance
+#       responses:
+#         '200':
+#           description: successful
+#   "/user/attendance":
+#     get:
+#       summary: personal_attendance attendance
+#       responses:
+#         '200':
+#           description: successful
+#   "/chats":
+#     get:
+#       summary: list chats
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create chat
+#       responses:
+#         '200':
+#           description: successful
+#   "/chats/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show chat
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update chat
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update chat
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete chat
+#       responses:
+#         '200':
+#           description: successful
+#   "/exams":
+#     get:
+#       summary: list exams
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create exam
+#       responses:
+#         '200':
+#           description: successful
+#   "/exams/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show exam
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update exam
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update exam
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete exam
+#       responses:
+#         '200':
+#           description: successful
+#   "/libraries":
+#     get:
+#       summary: list libraries
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create library
+#       responses:
+#         '200':
+#           description: successful
+#   "/libraries/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show library
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update library
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update library
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete library
+#       responses:
+#         '200':
+#           description: successful
+#   "/messages":
+#     get:
+#       summary: list messages
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create message
+#       responses:
+#         '200':
+#           description: successful
+#   "/messages/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show message
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update message
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update message
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete message
+#       responses:
+#         '200':
+#           description: successful
+#   "/resources":
+#     get:
+#       summary: list resources
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create resource
+#       responses:
+#         '200':
+#           description: successful
+#   "/resources/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show resource
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update resource
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update resource
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete resource
+#       responses:
+#         '200':
+#           description: successful
+#   "/schools":
+#     get:
+#       summary: list schools
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create school
+#       responses:
+#         '200':
+#           description: successful
+#   "/schools/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show school
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update school
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update school
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete school
+#       responses:
+#         '200':
+#           description: successful
+#   "/units":
+#     get:
+#       summary: list units
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create unit
+#       responses:
+#         '200':
+#           description: successful
+#   "/units/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show unit
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update unit
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update unit
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete unit
+#       responses:
+#         '200':
+#           description: successful
+#   "/users":
+#     get:
+#       summary: list users
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create user
+#       responses:
+#         '200':
+#           description: successful
+#   "/users/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show user
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete user
+#       responses:
+#         '200':
+#           description: successful
+#   "/video_conferences":
+#     get:
+#       summary: list video_conferences
+#       responses:
+#         '200':
+#           description: successful
+#     post:
+#       summary: create video_conference
+#       responses:
+#         '200':
+#           description: successful
+#   "/video_conferences/{id}":
+#     parameters:
+#     - name: id
+#       in: path
+#       description: id
+#       required: true
+#       schema:
+#         type: string
+#     get:
+#       summary: show video_conference
+#       responses:
+#         '200':
+#           description: successful
+#     patch:
+#       summary: update video_conference
+#       responses:
+#         '200':
+#           description: successful
+#     put:
+#       summary: update video_conference
+#       responses:
+#         '200':
+#           description: successful
+#     delete:
+#       summary: delete video_conference
+#       responses:
+#         '200':
+#           description: successful
+# servers:
+# - url: https://{defaultHost}
+#   variables:
+#     defaultHost:
+#       default: www.example.com
