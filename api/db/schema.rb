@@ -54,19 +54,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_205839) do
 
   create_table "courses", force: :cascade do |t|
     t.string "lesson"
+    t.text "body"
+    t.string "description"
     t.string "name"
+    t.integer "unit_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "exams", force: :cascade do |t|
-    t.bigint "unit_id", null: false
-    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "description"
+    t.text "body"
     t.integer "duration"
+    t.bigint "unit_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["unit_id"], name: "index_exams_on_unit_id"
-    t.index ["user_id"], name: "index_exams_on_user_id"
   end
 
   create_table "libraries", force: :cascade do |t|
@@ -99,6 +103,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_205839) do
 
   create_table "schools", force: :cascade do |t|
     t.string "name"
+    t.string "description"
+    t.text "body"
     t.string "address"
     t.integer "contact_details"
     t.datetime "created_at", null: false
@@ -118,22 +124,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_205839) do
 
   create_table "units", force: :cascade do |t|
     t.string "name"
-    t.integer "course_id"
+    t.string "description"
+    t.text "body"
     t.bigint "school_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_units_on_school_id"
-    t.index ["user_id"], name: "index_units_on_user_id"
-  end
-
-  create_table "user_courses", force: :cascade do |t|
-    t.bigint "unit_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["unit_id"], name: "index_user_courses_on_unit_id"
-    t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
 
   create_table "user_exams", force: :cascade do |t|
@@ -184,16 +180,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_25_205839) do
   add_foreign_key "chats", "units"
   add_foreign_key "chats", "users"
   add_foreign_key "exams", "units"
-  add_foreign_key "exams", "users"
   add_foreign_key "libraries", "resources"
   add_foreign_key "libraries", "users"
   add_foreign_key "messages", "units"
   add_foreign_key "messages", "users"
   add_foreign_key "resources", "units"
   add_foreign_key "units", "schools"
-  add_foreign_key "units", "users"
-  add_foreign_key "user_courses", "units"
-  add_foreign_key "user_courses", "users"
   add_foreign_key "user_exams", "exams"
   add_foreign_key "user_exams", "users"
   add_foreign_key "users", "schools"
