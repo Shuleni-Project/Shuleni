@@ -57,7 +57,7 @@ function NewUser({role=2}) {
     
     <div className='relative bg-opacity-20 bg-gradient-to-tl from-lime-100 via-red-200 to-gray-300' >
 
-{/* eslint-disable-next-line react/style-prop-object, react/style-prop-object*/}
+      {/* eslint-disable-next-line react/style-prop-object, react/style-prop-object*/}
       <Button style="absolute top-8 left-6"
       onclick={()=>navigate("/dashboard")} label="Go Back"/>
 

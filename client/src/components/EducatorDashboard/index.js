@@ -1,10 +1,8 @@
-import React, { useState, useEffect,} from "react";
+import React, { useState, useEffect } from "react";
 
 import { useNavigate } from 'react-router-dom';
 
-import { useSelector, } from 'react-redux';
-
-// import { getUserSuccess } from '../../State/userSlice';
+import { useSelector } from 'react-redux';
 
 import Welcome from "../ReusableComponents/WelcomeComponent";
 
@@ -64,7 +62,7 @@ function EducatorDashboard() {
          st=>({ 
            name:st.username, 
            description: st.email,
-           image:"/Web/class.png",
+           image:"/Web/grad.png",
            viewFunction:()=>navigate(`/students`)
          })
          ) || []}
@@ -76,7 +74,7 @@ function EducatorDashboard() {
          st=>({ 
            name:st.name, 
            description: st.description,
-           image:"/Web/class.png",
+           image:"/Web/course.png",
            viewFunction:()=>navigate(`/courses/${st.id}`)
          })
          ) || []}
@@ -87,7 +85,7 @@ function EducatorDashboard() {
          st=>({ 
            name:st.name, 
            description: st.description,
-           image:"/Web/class.png",
+           image:"/Web/educator.png",
            viewFunction:()=>navigate(`/contents/${st.id}`)
          })
          ) || []}
@@ -95,11 +93,23 @@ function EducatorDashboard() {
          addFunction={()=>navigate("/createContent")}
         />
 
+        <ViewItems array={user?.school?.resources?.filter(res=>user?.units?.map(unit=>unit.id).includes(res.id)).map(
+         st=>({ 
+           name:st.name, 
+           description: st.file_url,
+           image:"/Web/educator.png",
+           viewFunction:()=>window.open(`${st.file_url}`)
+         })
+         ) || []}
+         title="Resources "
+         addFunction={()=>navigate("/createResource")}
+        />
+
         <ViewItems array={user?.exams.map(
          st=>({ 
            name:st.name, 
            description: st.description,
-           image:"/Web/class.png",
+           image:"/Web/course.png",
            viewFunction:()=>navigate(`/exams/${st.id}`)
          })
          ) || []}
@@ -111,12 +121,23 @@ function EducatorDashboard() {
          st=>({ 
            name:st.name, 
            description: st.description,
-           image:"/Web/class.png",
+           image:"/Web/course.png",
            viewFunction:(!user?.user_assignments?.map(obj=>obj.exam_id).includes(st.id)) && (()=>navigate(`/assignments/${st.id}`))
          })
          ) || []}
          title="Assignments"
          addFunction={()=>navigate("/createAssignment")}
+        />
+        
+        <ViewItems array={user?.school?.students?.map(
+         st=>({ 
+           name:st.username, 
+           description: st.email,
+           image:"/Web/grad.png",
+         })
+         ) || []}
+         title="Attendance"
+         addFunction={()=>navigate("/attendance")}
         />
       
     </div>

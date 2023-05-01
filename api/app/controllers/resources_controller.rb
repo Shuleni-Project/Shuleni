@@ -12,7 +12,7 @@ class ResourcesController < ApplicationController
     end
     def create 
         resource = Resource.create(resource_params)
-        render json: resource, status: :created
+        render json: User.find_by(email: params[:creator]), status: :created
     end
     def update
         resource = Resource.find_by(id: params[:id])

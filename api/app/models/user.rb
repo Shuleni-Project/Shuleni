@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :attendances
   has_many :user_units,  dependent: :destroy
   has_many :units, through: :user_units
+  has_many :resources, through: :units
   has_many :users, through: :user_units
   has_many :exams, through: :units
   has_many :user_exams, through: :exams
