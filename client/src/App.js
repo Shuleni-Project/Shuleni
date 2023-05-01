@@ -5,7 +5,7 @@ import About from './Web/About';
 import Terms from './Web/Terms';
 
 import Portfolio from './views/Portfolio';
-import Student from './views/Student';
+// import Student from './views/Student';
 import ChatRoom from './components/ChatRoom';
 import Chats from './components/Chats';
 import Navbar from './components/Navbar';
@@ -13,9 +13,6 @@ import Navbar from './components/Navbar';
 import NewUser from './components/ReusableComponents/NewUser'
 import SideNavbar from './components/SideNavbar';
 import NewItem from './components/ReusableComponents/NewItem';
-
-import Sidebar from './components/Sidebar';
-import { SidebarData } from './components/SidebarData';
 
 
 import ViewOnly from './components/ReusableComponents/ViewEditor/ViewOnly';
@@ -80,7 +77,8 @@ function App() {
     };
   
     fetchUser();
-  },[])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]) // eslint-disable-line no-use-before-define
   
   useEffect(()=>{},[user])
 
@@ -141,7 +139,7 @@ function App() {
             <Route exact path='/portfolio' element= {<Portfolio />} />
 
             
-            <Route exact path='/student' element= {<Student />} />
+            {/* <Route exact path='/student' element= {<Student />} /> */}
 
             <Route exact path='/chats' element= {<Chats />} />
             <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 

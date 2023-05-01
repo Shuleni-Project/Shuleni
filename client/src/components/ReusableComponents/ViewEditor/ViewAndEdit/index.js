@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Editor from '../../Editor'
 import Button from '../../Button'
 
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function ViewAndEdit({item, buttonLabel, buttonClickFunction,
   editorConfig={
