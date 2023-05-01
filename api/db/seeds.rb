@@ -32,11 +32,20 @@ require 'faker'
   end
 
   User.create(username: 'boomin', email:'metroboomin@gmail.com', password: "password",
-  role: 0, course: 'Business', gender: 'Male', school_id: 1);
+  role: User.roles.keys.sample,
+  course: Faker::Educator.course_name,
+  gender: Faker::Gender.binary_type,
+  school_id: School.all.sample.id);
 User.create(username: 'metro', email:'metroooo@gmail.com', password: "password",
-      role: 1, course: 'Architecture', gender: 'Male', school_id: 1);
+role: User.roles.keys.sample,
+course: Faker::Educator.course_name,
+gender: Faker::Gender.binary_type,
+school_id: School.all.sample.id);
 User.create(username: 'Ice Spice', email:'eyespice@gmail.com', password: "password",
-          role: 2, course: 'Physics', gender: 'Female', school_id: 1);
+role: User.roles.keys.sample,
+course: Faker::Educator.course_name,
+gender: Faker::Gender.binary_type,
+school_id: School.all.sample.id);
 
   
   # Seed data for units
