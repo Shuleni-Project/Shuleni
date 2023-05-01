@@ -23,31 +23,4 @@ class VideoConferencesController < ApplicationController
       render json: @video_conference.errors, status: :unprocessable_entity
     end
   end
-
-  def edit
-  end
-
-  def update
-    if @video_conference.update(video_conference_params)
-      render json: @video_conference
-    else
-      render json: @video_conference.errors, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @video_conference.destroy
-    head :no_content
-  end
-
-  private
-
-  def set_video_conference
-    @video_conference = VideoConference.find(params[:id])
-  end
-
-  def video_conference_params
-    params.require(:video_conference).permit(:user_id, :unit_id, :meeting_url, :meeting_name)
-  end
-end
-
+  

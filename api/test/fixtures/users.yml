@@ -1,19 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  username: MyString
-  email: MyString
-  password_digest: <%= BCrypt::Password.create("secret") %>
-  role: 1
-  course: MyString
-  gender: MyString
-  school: one
+# one:
+#   username: MyString
+#   email: MyString
+#   password_digest: <%= BCrypt::Password.create("secret") %>
+#   role: 1
+#   course: MyString
+#   gender: MyString
+#   school: one
 
-two:
-  username: MyString
-  email: MyString
-  password_digest: <%= BCrypt::Password.create("secret") %>
-  role: 1
-  course: MyString
-  gender: MyString
-  school: two
+# two:
+#   username: MyString
+#   email: MyString
+#   password_digest: <%= BCrypt::Password.create("secret") %>
+#   role: 1
+#   course: MyString
+#   gender: MyString
+#   school: two

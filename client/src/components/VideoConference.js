@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const VideoConference = () => {
   const localVideoRef = useRef(null);
@@ -58,6 +58,9 @@ const VideoConference = () => {
 
     setupLocalVideo();
   }, []);
+  
+  const endCall = () => { setParticipantCount(0)}
+  const toggleCamera = () => {return 0;}
 
   return (
     <div>
