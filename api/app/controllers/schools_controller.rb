@@ -1,12 +1,20 @@
 class SchoolsController < ApplicationController
     before_action :set_school, only: [:show, :update, :destroy]
+    
     before_action :authorize_school, only: [:show, :update, :destroy]
+    
     before_action :authorize_teacher, only: [:add_student, :add_teacher, :add_resource, :take_attendance]
+    
+    before_action :authorize_request, except: [:create, :index]
+    
+    
     # GET /schools
     def index
       @schools = School.all
-      if current_user.role == "student" || current_user.role == "teacher"
-        @schools = current_user.school
+      if @current_user
+        if @current_user.role == "student" || @current_user.role == "teacher"
+          @schools = @current_user.school
+        end
       end
       render json: @schools
     end
@@ -87,7 +95,7 @@ class SchoolsController < ApplicationController
         # check if current user is authorized to perform teacher actions
       end
       def school_params
-        params.require(:school).permit(:name, :address, :contact_details)
+        params.require(:school).permit(:name, :address, :contact_details, :description)
       end
       def student_params
         params.require(:student).permit(:name, :email, :password)

@@ -1,9 +1,6 @@
 class ExamsController < ApplicationController
     def index
-        exam = Exam.all
-        if current_user.role == "student"
-            exam = current_user.exams
-        end
+        exam = @current_user.exams
         render json: exam
     end
     def show
@@ -12,7 +9,7 @@ class ExamsController < ApplicationController
     end
     def create
         exam = Exam.create(exam_params)
-        render json: exam, status: :created
+        render json: User.find_by(email: params[:creator])
     end
     def update
         exam = Exam.find_by(id: params[:id])
@@ -25,6 +22,6 @@ class ExamsController < ApplicationController
     end
     private
     def exam_params
-        params.permit(:unit_id, :user_id, :duration)
+        params.permit(:unit_id, :duration, :body, :description, :name)
     end
 end

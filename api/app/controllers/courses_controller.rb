@@ -1,26 +1,29 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show update destroy ]
-
+  # before_action :set_course, only: %i[ show update destroy ]
+  # load_and_authorize_resource
   # GET /courses
   def index
     courses = Course.all
-    # if current_user.role == "student"
-    #   courses = current_user.courses
-    # end
+    puts @current_user
+    if @current_user.role != "admin"
+      courses = @current_user.school.courses.uniq
+    else
+      courses = @current_user.courses.uniq
+    end
     render json: courses
   end
 
   # GET /courses/1
   def show
-    render json: @course
+    render json: set_course.contents
   end
 
   # POST /courses
   def create
-    @course = Course.new(course_params)
+    @course = Course.create(course_params)
 
-    if @course.save
-      render json: @course, status: :created, location: @course
+    if @course
+      render json: @course.unit.school.users.find_by(email: params[:creator])
     else
       render json: @course.errors, status: :unprocessable_entity
     end
@@ -48,6 +51,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:lesson, :name)
+      params.permit(:lesson, :name, :unit_id, :name, :description, :body)
     end
 end
