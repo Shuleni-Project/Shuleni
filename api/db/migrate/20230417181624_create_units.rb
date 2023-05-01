@@ -1,10 +1,11 @@
-class CreateUnits < ActiveRecord::Migration[7.0]
+class CreateSchools < ActiveRecord::Migration[7.0]
   def change
-    create_table :units do |t|
+    create_table :schools do |t|
       t.string :name
-      t.integer :course_id
-      t.references :school, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.string :description
+      t.text :body
+      t.string :address
+      t.integer :contact_details
 
       t.timestamps
     end

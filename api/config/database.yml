@@ -25,10 +25,10 @@ default: &default
 
 development:
   <<: *default
-  host: localhost
-  username: shuleni
-  password: julie@lj2021
-  database: shuleni
+  # host: localhost
+  # username: shuleni
+  # password: julie@lj2021
+  # database: shuleni
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
