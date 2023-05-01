@@ -17,7 +17,7 @@ function Home() {
           <h1 className="text-5xl text-white-500 font-bold mb-4">
             WELCOME TO SHULENI
           </h1>
-          <div className="text-2xl text-center text-gray-50 mb-4">
+          <div className="text-2xl text-center text-gray-50 mb-4 backdrop-filter backdrop-blur-lg">
             <div className="bg-white/20 p-4">
               <p className="mb-4">
                 This app primary function is to create an online platform where students can study remotely. Shuleni gives you a list of available schools and you can choose which one you want to enroll to.
