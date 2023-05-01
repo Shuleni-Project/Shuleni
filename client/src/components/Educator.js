@@ -1,8 +1,11 @@
 import React from 'react'
+import Login from './Login'
 
 function Educator() {
   return (
-    <div>Educator</div>
+    <div>
+      
+    </div>
   )
 }
 
