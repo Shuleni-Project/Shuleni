@@ -64,7 +64,7 @@ function NewResource() {
                     
                 </select>
             </div>
-            <Button label="Create Resource" style="flex-grow-0"/>
+            <Button label="Create Resource" style={"flex-grow-0"}/>
         </form>
         <div className="flex flex-grow lg:flex-grow p-2 md:w-1/2 h-max  w-full md:min-w-[500px] max-w-[500px] mt-20">
             <FillLogin />

@@ -19,7 +19,7 @@ function Rowed({image, name, description, buttonLabel, deleteFunction,
     if(optionsDisabled){
       disableOptions.current.disabled = optionsDisabled
     }
-  },[disableOptions])
+  },[optionsDisabled])
 
   
 
