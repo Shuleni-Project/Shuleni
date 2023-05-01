@@ -3,8 +3,8 @@ class AttendancesController < ApplicationController
     load_and_authorize_resource 
     def index
         attendances = Attendance.all
-        if current_user.role == "student"
-            attendances = current_user.attendances
+        if @current_user.role == "student"
+            attendances = @current_user.attendances
         end
         # else
         # if can? :read, attendances
@@ -26,7 +26,7 @@ class AttendancesController < ApplicationController
     end
 
     def create
-        attendance = Attendance.create!(attendance_params)
+        attendance = Attendance.create(attendance_params)
         render json: attendance, status: :created
     end
     def update
