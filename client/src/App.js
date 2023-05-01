@@ -9,9 +9,14 @@ import Student from './views/Student';
 import ChatRoom from './components/ChatRoom';
 import Chats from './components/Chats';
 import Navbar from './components/Navbar';
+
 import NewUser from './components/ReusableComponents/NewUser'
 import SideNavbar from './components/SideNavbar';
 import NewItem from './components/ReusableComponents/NewItem';
+
+import Sidebar from './components/Sidebar';
+import { SidebarData } from './components/SidebarData';
+
 
 import ViewOnly from './components/ReusableComponents/ViewEditor/ViewOnly';
 import VideoConference from './components/VideoConference';
@@ -37,6 +42,7 @@ import ExamMarking from './components/EducatorDashboard/Features/Marking';
 
 function App() {
   const navigate = useNavigate();
+
 
   const user = useSelector((state) => state.user.data);
 
