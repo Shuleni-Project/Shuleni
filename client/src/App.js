@@ -5,7 +5,7 @@ import About from './Web/About';
 import Terms from './Web/Terms';
 
 import Portfolio from './views/Portfolio';
-import Student from './views/Student';
+// import Student from './views/Student';
 import ChatRoom from './components/ChatRoom';
 import Chats from './components/Chats';
 import Navbar from './components/Navbar';
