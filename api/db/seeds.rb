@@ -31,6 +31,13 @@ require 'faker'
     )
   end
 
+  User.create(username: 'boomin', email:'metroboomin@gmail.com', password: "password",
+  role: 0, course: 'Business', gender: 'Male', school_id: 1);
+User.create(username: 'metro', email:'metroooo@gmail.com', password: "password",
+      role: 1, course: 'Architecture', gender: 'Male', school_id: 1);
+User.create(username: 'Ice Spice', email:'eyespice@gmail.com', password: "password",
+          role: 2, course: 'Physics', gender: 'Female', school_id: 1);
+
   
   # Seed data for units
   100.times do
