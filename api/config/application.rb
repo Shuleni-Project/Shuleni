@@ -20,11 +20,6 @@ Bundler.require(*Rails.groups)
 
 module Api
   class Application < Rails::Application
-
-    #Add cookies and session middlewware
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
-
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     # Configuration for the application, engines, and railties goes here.
@@ -44,11 +39,16 @@ module Api
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Flash
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict
+
+    config.autoload_paths << "#{Rails.root}/lib"
+
 
   end
 end

@@ -27,7 +27,7 @@ class AttendancesController < ApplicationController
 
     def create
         attendance = Attendance.create(attendance_params)
-        render json: attendance, status: :created
+        render json: User.find_by(email: params[:creator]) 
     end
     def update
         attendance = Attendance.find_by(id: params[:id])

@@ -9,8 +9,8 @@ Rails.application.configure do
       address: "smtp.gmail.com",
       port: 587,
       domain: nil,
-      user_name: "",
-      password: "",
+      user_name: "shuleniwebapp@gmail.com",
+      password: "yahudxretkrqxfpx",
       authentication: :plain,
       enable_starttls_auto: true
   }
@@ -34,16 +34,10 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
-    config.cache_store = :memory_store
-    config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
-    }
-  else
-    config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = false
+  config.cache_store = :null_store
+  config.public_file_server.headers = {}
 
-    config.cache_store = :null_store
-  end
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -69,4 +63,6 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   config.action_cable.disable_request_forgery_protection = true
+  config.logger = ActiveSupport::Logger.new(nil)
+
 end

@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-// import { getUserSuccess } from '../../State/userSlice';
-
 import Welcome from "../ReusableComponents/WelcomeComponent";
 
 import AnalyticsComponent from "../ReusableComponents/AnalyticsComponent";
@@ -90,6 +88,16 @@ function StudentDashboard2() {
          })
          ) || []}
          title="Assignments"
+        />
+        <ViewItems array={user?.school?.resources?.filter(res=>user?.units?.map(unit=>unit.id).includes(res.id)).map(
+         st=>({ 
+           name:st.name, 
+           description: st.file_url,
+           image:"/Web/educator.png",
+           viewFunction:()=>window.open(`${st.file_url}`)
+         })
+         ) || []}
+         title="Resources "
         />
         
     </div>
