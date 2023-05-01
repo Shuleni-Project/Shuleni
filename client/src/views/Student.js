@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import SideNavbar from '../components/SideNavbar';
 import EnrolledCourses from '../components/EnrolledCourses';
-import Chart from '../components/Chart';
+// import Chart from '../components/Chart';
 import { studentScores } from '../Data';
 import StudentAttendance from '../components/StudentAttendance';
 
@@ -49,7 +49,7 @@ function Student() {
           <EnrolledCourses />
           <div className='flex flex-wrap justify-around'>
             <div className='max-w-sm flex-auto'>
-              <Chart chartData={studentScore} />
+              {/* <Chart chartData={studentScore} /> */}
             </div>
             <div className='max-w-sm flex-auto'>
               <StudentAttendance chartData={attendance} />
