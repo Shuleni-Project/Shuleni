@@ -5,9 +5,9 @@ function Home() {
   return (
     <div className="w-full relative">
       <div>
-        <video autoPlay muted loop className="w-full h-full">
+        <video autoPlay muted loop className="w-screen h-screen min-w-fit">
           <source
-            src="https://database-six.vercel.app/video/2.mp4"
+            src="https://database-six.vercel.app/video/2  .mp4"
             type="video/mp4"
           />
         </video>
@@ -17,7 +17,7 @@ function Home() {
           <h1 className="text-5xl text-white-500 font-bold mb-4">
             WELCOME TO SHULENI
           </h1>
-          <div className="text-2xl text-center text-gray-50 mb-4">
+          <div className="text-2xl text-center text-gray-50 mb-4 backdrop-filter backdrop-blur-lg">
             <div className="bg-white/20 p-4">
               <p className="mb-4">
                 This app primary function is to create an online platform where students can study remotely. Shuleni gives you a list of available schools and you can choose which one you want to enroll to.
@@ -28,7 +28,7 @@ function Home() {
             </div>
           </div>
           <div className="flex space-x-2 justify-center">
-            <Link to="/landing">
+            <Link to="/login">
               <button
                 type="button"
                 data-mdb-ripple="true"
@@ -49,7 +49,8 @@ function Home() {
           </video>
         </div>
       </div>
-    </div>
+      </div>
   );
-}
-export default Home;
+
+  }
+export default Home

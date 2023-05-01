@@ -1,0 +1,6 @@
+class UserCourse < ApplicationRecord
+    belongs_to :user
+    belongs_to :course
+    has_one :unit, through: :course
+    has_one :school, through: :unit
+end
