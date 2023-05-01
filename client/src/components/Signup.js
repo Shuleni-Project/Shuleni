@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getUserSuccess } from '../State/userSlice';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,8 +13,6 @@ function Signup() {
     const [school, setSchool]= useState({});
 
     const [schoolInfo, setSchoolInfo] = useState(false);
-
-    const loggedUser = useSelector((state) => state.user.data);
     
     const dispatch = useDispatch();
     

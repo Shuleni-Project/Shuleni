@@ -1,11 +1,11 @@
-import Courses from './ReusableComponents/Courses';
+// import Courses from './ReusableComponents/Courses';
 
 import ViewItems from './ReusableComponents/ViewItems/RowedItems';
 
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 
 function Course({item, role}) {
-  const user = useSelector((state) => state.user.data);
+  // const user = useSelector((state) => state.user.data);
 
   
   return (

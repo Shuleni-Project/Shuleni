@@ -35,7 +35,7 @@ function Courses({item, role}) {
       .then((courses) => {
         setCourses(courses)
       })
-  }, [])
+  }, [item])
   
   useEffect(()=>{
     fetch(`http://127.0.0.1:3000/units`, {
@@ -98,9 +98,7 @@ function Courses({item, role}) {
 
             </div>
           )
-          {
-            /* </Link> */
-          }
+          
         })
       ) : (
         <>NO COURSES AT THE MOMENT{console.log("ghgsd")}</>
