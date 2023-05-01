@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import FillLogin from "../assests/FillLogin";
 
-import { getUserSuccess } from '../State/userSlice';
+import {  getUserSuccess } from '../State/userSlice';
 
 import { useDispatch } from 'react-redux';
 
@@ -12,7 +12,6 @@ function Login() {
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
 
-    // const user = useSelector((state) => state.user.data);
     const dispatch = useDispatch();
     
     const handleUsernameChange = (e) => {

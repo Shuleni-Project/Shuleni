@@ -5,15 +5,13 @@ import About from './Web/About';
 import Terms from './Web/Terms';
 
 import Portfolio from './views/Portfolio';
-// import Student from './views/Student';
+import Student from './views/Student';
 import ChatRoom from './components/ChatRoom';
 import Chats from './components/Chats';
 import Navbar from './components/Navbar';
-
 import NewUser from './components/ReusableComponents/NewUser'
 import SideNavbar from './components/SideNavbar';
 import NewItem from './components/ReusableComponents/NewItem';
-
 
 import ViewOnly from './components/ReusableComponents/ViewEditor/ViewOnly';
 import VideoConference from './components/VideoConference';
@@ -36,10 +34,11 @@ import Footer from './Web/Footer';
 import CreateExam from './components/EducatorDashboard/Features/Create';
 import StudentAnswer from './components/StudentDashboard2/Features/StudentAnswer';
 import ExamMarking from './components/EducatorDashboard/Features/Marking';
+import Attendance from './components/EducatorDashboard/Features/Attendance';
+import NewResource from './components/EducatorDashboard/Features/NewResource';
 
 function App() {
   const navigate = useNavigate();
-
 
   const user = useSelector((state) => state.user.data);
 
@@ -78,7 +77,7 @@ function App() {
   
     fetchUser();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]) // eslint-disable-line no-use-before-define
+  },[])
   
   useEffect(()=>{},[user])
 
@@ -130,7 +129,7 @@ function App() {
       <div className='z-0 bg-gradient-to-t from-blue-100 via-red-200 to-gray-300'>
         <Navbar />
         {user && <SideNavbar/>}
-        <div className={'lg:pt-[calc(5rem+5px)] md:pt-0 z-10 '+(user ? "ml-[calc(6rem-6px)]":"")}>
+        <div className={'h-[calc(100vh - 88px)] lg:pt-[calc(5rem+5px)] md:pt-0 z-10 '+(user ? "ml-[calc(6rem-6px)]":"")}>
 
           <Routes>
             <Route exact path='/' element= {<Home />} />
@@ -139,7 +138,7 @@ function App() {
             <Route exact path='/portfolio' element= {<Portfolio />} />
 
             
-            {/* <Route exact path='/student' element= {<Student />} /> */}
+            <Route exact path='/student' element= {<Student />} />
 
             <Route exact path='/chats' element= {<Chats />} />
             <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 
@@ -161,6 +160,7 @@ function App() {
             <Route exact path='/createExam' element={<CreateExam/>}/>
             <Route exact path='/createContent' element={<CreateExam item="content"/>}/>
             <Route exact path='/createAssignment' element={<CreateExam item="assignment"/>}/>
+            <Route exact path='/attendance' element={<Attendance/>}/>
 
             {user?.role!=="admin" && <Route exact path='/courses/:id' element={<ViewOnly item="courses"/>}/>}
             {user?.role === "teacher" && <Route exact path='/exams/:id' element={
@@ -187,6 +187,7 @@ function App() {
 
             <Route exact path='/newCourse' element= {<NewItem item="course"/>} />
             <Route exact path='/newUnit' element= {<NewItem item="unit"/>} />
+            <Route exact path='/createResource' element= {<NewResource item="unit"/>} />
             
             <Route exact path='/newStudent' element= {<NewUser role={0}/>} />
             <Route exact path='/newEducator' element= {<NewUser role={1}/>} />
@@ -197,9 +198,9 @@ function App() {
             <Route exact path='/videoconference' element= {<VideoConference />} />
             <Route exact path='/signup' element= {<Signup />} />
 
-            
-            
           </Routes> 
+        </div>
+        <div className={'bottom-0 md:pt-0 z-10 '+(user ? "ml-[calc(6rem-6px)]":"")}>
           <Footer/>
         </div>
       </div>
