@@ -23,4 +23,5 @@ class VideoConferencesController < ApplicationController
       render json: @video_conference.errors, status: :unprocessable_entity
     end
   end
+end
   
