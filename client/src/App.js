@@ -138,7 +138,7 @@ function App() {
             <Route exact path='/portfolio' element= {<Portfolio />} />
 
             
-            <Route exact path='/student' element= {<Student />} />
+            {/* <Route exact path='/student' element= {<Student />} /> */}
 
             <Route exact path='/chats' element= {<Chats />} />
             <Route exact path='/chats/:unitId' element= {<ChatRoom />} /> 
