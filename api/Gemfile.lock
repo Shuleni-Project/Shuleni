@@ -99,6 +99,7 @@ GEM
     irb (1.6.4)
       reline (>= 0.3.0)
     jsonapi-renderer (0.2.2)
+    jwt (2.7.0)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -206,6 +207,7 @@ DEPENDENCIES
   debug
   factory_bot_rails (~> 6.2)
   faker
+  jwt
   pg (~> 1.4.5)
   puma (~> 5.0)
   rack-cors
@@ -217,7 +219,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.4.7
