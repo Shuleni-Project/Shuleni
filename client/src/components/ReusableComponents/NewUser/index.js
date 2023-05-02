@@ -36,7 +36,7 @@ function NewUser({role=2}) {
         }
         setUnitSelected(true)
         console.log(user)
-        fetch("http://localhost:3000/users",{
+        fetch("https://shuleni-api.onrender.com/users",{
                 method:"POST",
                 headers:{
                   "Content-Type":"application/json"

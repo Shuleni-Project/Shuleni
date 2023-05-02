@@ -53,7 +53,7 @@ function App() {
       const token = localStorage.getItem("jwtToken")
       if(token){
         try {
-          const response = await fetch('http://localhost:3000/me',{
+          const response = await fetch('https://shuleni-api.onrender.com/me',{
             headers: {
                 "Authorization" : "Bearer "+localStorage.getItem("jwtToken")
             }
@@ -89,7 +89,7 @@ function App() {
     if(!info) return;
     console.log({...info, body: editorInput, exam_id: exam_id, creator: user.email})
     if(user.role==="teacher"){
-      fetch(`http://localhost:3000/${item}&creator=${user.email}`,{
+      fetch(`https://shuleni-api.onrender.com/${item}&creator=${user.email}`,{
         method:"PUT",
         headers:{
               "Content-Type":"application/json",
@@ -104,7 +104,7 @@ function App() {
         })})
         .catch(e=>e)
     }else if(user.role ==="student"){
-      fetch(`http://localhost:3000/${item==="exams"?"user_exams":"student_assignments"}`,{
+      fetch(`https://shuleni-api.onrender.com/${item==="exams"?"user_exams":"student_assignments"}`,{
         method:"POST",
         headers:{
               "Content-Type":"application/json",

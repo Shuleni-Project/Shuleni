@@ -34,7 +34,7 @@ function NewItem({item="exam"}) {
            return
           }
         }
-        fetch(`http://localhost:3000/${item}s`,{
+        fetch(`https://shuleni-api.onrender.com/${item}s`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

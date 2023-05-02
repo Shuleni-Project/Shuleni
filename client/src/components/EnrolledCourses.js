@@ -14,7 +14,7 @@ export default function EnrolledCOurses() {
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
-        fetch("http://127.0.0.1:3000/courses",{
+        fetch("https://shuleni-api.onrender.com/courses",{
             headers: {
                 "Authorization" : "Bearer "+localStorage.getItem("jwtToken")
             }
