@@ -13,7 +13,7 @@ function Signup() {
     const [school, setSchool]= useState({});
 
     const [schoolInfo, setSchoolInfo] = useState(false);
-    
+
     const dispatch = useDispatch();
     
     const navigate = useNavigate();

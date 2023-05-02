@@ -5,3 +5,4 @@ class MyMailer < ApplicationMailer
       mail(to: @user.email, subject: "Welcome to #{@user.school.name}")
     end
   end
+  

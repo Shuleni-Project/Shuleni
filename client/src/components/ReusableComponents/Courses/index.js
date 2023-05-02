@@ -98,7 +98,6 @@ function Courses({item, role}) {
 
             </div>
           )
-          
         })
       ) : (
         <>NO COURSES AT THE MOMENT{console.log("ghgsd")}</>

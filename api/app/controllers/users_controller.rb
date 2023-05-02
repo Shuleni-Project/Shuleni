@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         end
         
         render json: user, status: :ok
-  
+
         # get the users attendance from the attandance table
     end
     def show
@@ -27,10 +27,10 @@ class UsersController < ApplicationController
             gender: params[:gender], 
             school_id: params[:school_id],
             password: params[:password])
-  
+
         pass= SecureRandom.alphanumeric(30)
         user.password ||= pass
-  
+
         
         if user.save
             UserUnit.create(user_id: user.id, unit_id: params[:course])
@@ -55,10 +55,10 @@ class UsersController < ApplicationController
         admin = school.users.find_by(role: "admin")
         render json: admin, status: :ok
     end
-  
+
     
     private
     def user_params
         params.require(:user).permit(username: params[:username], email: params[:email], role: params[:role], course: params[:course], gender: params[:gender], school_id: params[:school_id] , password: params[:password])
     end
-  end
+end

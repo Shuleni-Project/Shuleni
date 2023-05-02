@@ -1,6 +1,8 @@
 class SchoolSerializer < ActiveModel::Serializer
-  attributes :id, :name, :address, :contact_details, :students_count, :teachers_count, :units, :courses, :new_students, :new_teachers, :courses_count, :new_courses, :units_count, :new_units, :students, :teachers
-  
+  attributes :id, :name, :address, :contact_details, :students_count, :teachers_count, :units,
+  :courses, :new_students, :new_teachers, :courses_count, :new_courses, :units_count, :new_units, 
+  :students, :teachers, :attendances, :resources
+
   def students_count
     students.count || 0
   end
