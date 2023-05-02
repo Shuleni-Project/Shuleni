@@ -48,7 +48,7 @@ function AdminDashboard() {
 
   function deleteFunction(id){
     console.log(id)
-    fetch(`http://localhost:3000/users/${id}`, {
+    fetch(`https://shuleni-api.onrender.com/users/${id}`, {
       method:"DELETE",
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('jwtToken'),

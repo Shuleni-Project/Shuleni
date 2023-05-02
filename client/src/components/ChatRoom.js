@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-const webSocketUrl = `ws://localhost:3000/cable`;
+const webSocketUrl = `wss://shuleni-api.onrender.com/cable`;
 const webSocket = new WebSocket(webSocketUrl);
 
 let changes = 0;

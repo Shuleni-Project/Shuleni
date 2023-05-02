@@ -27,7 +27,7 @@ function Login() {
         e.preventDefault();
         console.log({email: email, password: password})
         // creates the post when the data is added it adds the data to the backend ie ..db.json
-        fetch("http://127.0.0.1:3000/login", {
+        fetch("https://shuleni-api.onrender.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -15,7 +15,7 @@ function Attendace() {
   function markAttendance(e, id){
     e.target.disabled = true
 
-    fetch(`http://localhost:3000/attendances`,{
+    fetch(`https://shuleni-api.onrender.com/attendances`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json",

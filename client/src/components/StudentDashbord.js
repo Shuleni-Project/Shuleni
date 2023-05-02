@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 import Courses from './ReusableComponents/Courses'
 import EnrolledCOurses from './EnrolledCourses'
-import Chart from './Chart'
+// import Chart from './Chart'
 
 function StudentDashbord() {
   

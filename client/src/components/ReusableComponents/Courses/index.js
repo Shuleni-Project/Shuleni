@@ -26,7 +26,7 @@ function Courses({item, role}) {
     ],}
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3000/${item}`, {
+    fetch(`https://shuleni-api.onrender.com/${item}`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('jwtToken'),
       },
@@ -38,7 +38,7 @@ function Courses({item, role}) {
   }, [item])
   
   useEffect(()=>{
-    fetch(`http://127.0.0.1:3000/units`, {
+    fetch(`https://shuleni-api.onrender.com/units`, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('jwtToken'),
       },

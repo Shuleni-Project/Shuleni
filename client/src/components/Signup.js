@@ -22,7 +22,7 @@ function Signup() {
     function submitFunction(e){
       e.preventDefault();
       if(schoolInfo){
-        fetch("http://localhost:3000/schools",{
+        fetch("https://shuleni-api.onrender.com/schools",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"
@@ -36,7 +36,7 @@ function Signup() {
             .then((data)=>{
               
               console.log(data)
-              fetch("http://localhost:3000/users",{
+              fetch("https://shuleni-api.onrender.com/users",{
                 method:"POST",
                 headers:{
                   "Content-Type":"application/json"

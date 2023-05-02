@@ -28,7 +28,7 @@ const SideNavbar = () => {
   }
 
   return (
-    <div class="dark:bg-zinc-800 fixed z-10 ">
+    <div className="dark:bg-zinc-800 fixed z-10 ">
       {/* <!-- Sidenav --> */}
       <nav
         id="full-screen-example"
