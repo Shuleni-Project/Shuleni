@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Shuleni-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Shuleni app is a web application for managing schools.It is designed to help school administrators, teachers, and parents to communicateeffectively, mange school activities, and monitor student's progress.
 
-## Available Scripts
 
-In the project directory, you can run:
+# Setup
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- User authentication (login and registration)
+- User roles (admin, teacher, parent)
+- School management (add/update/delete classes, subjects, teachers, and students)
+- Attendance management (record and view attendance)
+- Exam management (schedule and record exams)
+- Grades management (record and view grades)
+- Communication (send and receive messages)
+ 
+  ## Getting Started
+  
+To use the content on this repository, ensure you have the following:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- A computer that runs on either of the following; (Windows 7+, Linux, Mac OS)
+- nodejs 9.0+
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To use this repository on your machine requires some simple steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Shuleni-App(api)
+ you can use this app if you want to access my Shuleni Api .[see the repo](https://github.com/Shuleni-Project/Shuleni/tree/development/api)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Alternative One
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Open a terminal / command line interface on your computer
+- Clone the repository by using the following:
 
-### `npm run eject`
+        git clone git@github.com:Shuleni-Project/Shuleni.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Be patient as it creates a copy on your local machine for you.
+- Change directory to the repo folder:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        cd Shuleni
+  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- (Optional) Open it in ``Visual Studio Code``
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+        code .
 
-## Learn More
+- (Alternate Option) Open it in any editor of your choice.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Alternative Two
 
-### Code Splitting
+- On the top right corner of this page there is a button labelled ``Fork``.
+- Click on that button to fork the repository to your own account.
+- Take on the process in ``Alternative One`` above.
+- Remember to replace your username when cloning.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+        git clone https://github.com/Shuleni-Project/Shuleni.git
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+# Running the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To run the application, you can use the following steps:
 
-### Advanced Configuration
+- Install required dependencies from npm using
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+      npm install
+      
+- To run the application use
 
-### Deployment
+      npm start
+ 
+ 
+ 
+# Author & Licence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Authors
 
-### `npm run build` fails to minify
+- Samuel Githimu
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Joy Kirui
+
+- Brian Wambua 
+
+- Tracy Mumbi
+
+- Leewell Muchiri
+
+- Raphael Muragiri
+
+### Licence 
+
+permissive MIT licence
