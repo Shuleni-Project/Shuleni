@@ -1,8 +1,10 @@
 class UnitsController < ApplicationController
     def index
-        unit = Unit.all
-        if current_user.role == "student"
-            unit = current_user.units
+        unit = []
+        if @current_user.role == "student"
+            unit = @current_user.units
+        else
+            unit = @current_user.school.units
         end
         render json: unit
     end
@@ -11,9 +13,8 @@ class UnitsController < ApplicationController
         render json: unit, status: :ok
     end
     def create
-        owner = find_owner
-        owner.units.create!(unit_params)
-        render json: unit, status: :created
+        unit = Unit.create(unit_params)
+        render json: unit.school.users.find_by(email: params[:creator]), status: :ok
     end
     # def update
     #     owner = find_owner
@@ -25,10 +26,10 @@ class UnitsController < ApplicationController
     #     unit.destroy, status: :not_found
     # end
     private
-    def find_owner
-        Owner.find_by(id: params[:id])
-    end
+    # def find_owner
+    #     Owner.find_by(id: params[:id])
+    # end
     def unit_params
-        params.permit(:name, :school_id, :user_id)
+        params.permit(:name, :school_id, :body, :description)
     end
 end

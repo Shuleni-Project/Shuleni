@@ -10,14 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_25_205839) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.text "body"
+    t.date "due_date"
+    t.integer "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "attendances", force: :cascade do |t|
     t.date "date"
     t.boolean "present"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_attendances_on_user_id"
@@ -25,12 +35,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
-    t.integer "user_id", null: false
-    t.integer "unit_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "unit_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["unit_id"], name: "index_chats_on_unit_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "body"
+    t.integer "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -41,8 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
   end
 
   create_table "exams", force: :cascade do |t|
-    t.integer "unit_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "unit_id", null: false
+    t.bigint "user_id", null: false
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,8 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
   end
 
   create_table "libraries", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "resource_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "resource_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_id"], name: "index_libraries_on_resource_id"
@@ -72,7 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
   create_table "resources", force: :cascade do |t|
     t.string "name"
     t.string "file_url"
-    t.integer "unit_id", null: false
+    t.bigint "unit_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["unit_id"], name: "index_resources_on_unit_id"
@@ -86,10 +105,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "student_assignments", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.text "body"
+    t.string "status"
+    t.integer "user_id", null: false
+    t.integer "assignment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "units", force: :cascade do |t|
     t.string "name"
-    t.integer "school_id", null: false
-    t.integer "user_id", null: false
+    t.integer "course_id"
+    t.bigint "school_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_units_on_school_id"
@@ -105,6 +136,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
     t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
 
+  create_table "user_exams", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.text "body"
+    t.integer "score"
+    t.bigint "user_id", null: false
+    t.bigint "exam_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_user_exams_on_exam_id"
+    t.index ["user_id"], name: "index_user_exams_on_user_id"
+  end
+
+  create_table "user_units", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "unit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -112,15 +163,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
     t.integer "role"
     t.string "course"
     t.string "gender"
-    t.integer "school_id", null: false
+    t.bigint "school_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_users_on_school_id"
   end
 
   create_table "video_conferences", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "unit_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "unit_id", null: false
     t.string "meeting_url"
     t.string "meeting_name"
     t.datetime "created_at", null: false
@@ -143,6 +194,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_073245) do
   add_foreign_key "units", "users"
   add_foreign_key "user_courses", "units"
   add_foreign_key "user_courses", "users"
+  add_foreign_key "user_exams", "exams"
+  add_foreign_key "user_exams", "users"
   add_foreign_key "users", "schools"
   add_foreign_key "video_conferences", "units"
   add_foreign_key "video_conferences", "users"

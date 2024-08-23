@@ -1,16 +1,36 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function EnrolledCOurses() {
-    const courses = [
-        { id: 1, name: "Mathematics", instructor: "John Doe"},
-        { id: 2, name: "English", instructor: "Jane Smith"},
-        { id: 3, name: "Science", instructor: "David Lee" },
-        { id: 4, name: "History", instructor: "Sarah Brown" }
-    ];
+    const navigate = useNavigate()
+    // const courses = [
+
+    //     { id: 1, name: "Mathematics", instructor: "John Doe"},
+    //     { id: 2, name: "English", instructor: "Jane Smith"},
+    //     { id: 3, name: "Science", instructor: "David Lee" },
+    //     { id: 4, name: "History", instructor: "Sarah Brown" }
+    // ];
+
+    const [courses, setCourses] = useState([])
+
+    useEffect(() => {
+        fetch("http://127.0.0.1:3000/courses",{
+            headers: {
+                "Authorization" : "Bearer "+localStorage.getItem("jwtToken")
+            }
+        })
+        .then(response => response.json())
+        .then(courses => {
+            console.log(courses)
+            setCourses(courses)
+        })
+    }, [])
 
     return (
-        <>
+        <div>
             <h3 className="my-4 font-mono text-lg antialiased font-bold text-sky-900">ENROLLED COURSES</h3>
             {courses.map((course, index) => {
-                return <div className="border-dashed border-b-2 p-4 flex max-w-full" key={index}>
+                return <div className="border-dashed border-b-2 p-4 flex max-w-full" key={index} onClick={() => navigate(`/course_details/${course.id}`)}>
                     <div className="flex-1">
                         <p>{course.name}</p>
                         <span className="text-xs text-slate-500 mt-8">7 lessons</span>
@@ -34,6 +54,6 @@ export default function EnrolledCOurses() {
                     </div>
                 </div>
             })}
-        </>
+        </div>
     );
 }
